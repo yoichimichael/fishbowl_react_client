@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 import NavBar from './components/NavBar.js'
 import RulesView from './components/RulesView.js'
