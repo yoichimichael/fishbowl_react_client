@@ -1,4 +1,5 @@
 .rulesDiv {
+  position: relative;
   height: 518px;
   width: 320px;
   background-color: #D8D8D8;
@@ -7,4 +8,30 @@
 
 .h1 {
   margin: 0
+}
+
+.p {
+  text-align: justify;
+  line-height: 1.4;
+  margin: 0px 20px
+}
+
+.buttonsFooter {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  margin-left: -26px;
+
+}
+
+.lastButton {
+  margin-right: 2px;
+}
+
+.nextButton {
+  margin-left: 2px;
+}
+
+.homeButton {
+  margin-top: 5px;
 }
