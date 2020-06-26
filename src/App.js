@@ -1,11 +1,14 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import NavBar from './components/NavBar.js'
+import RulesView from './components/RulesView.js'
 
 function App() {
   return (
     <div className="App">
-      
+      <NavBar />
+      <RulesView />
     </div>
   );
 }
