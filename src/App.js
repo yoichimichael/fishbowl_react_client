@@ -11,12 +11,22 @@ class App extends Component {
     showRules: false
   }
 
+  showRulesToggle = () => {
+    this.setState(prevState => {
+      return {
+        showRules: !prevState.showRules
+      }
+    })
+  }
+
   render(){
     return (
       <div className="App">
         <NavBar />
-        <MainContainer />
-        <RulesView />
+        {this.state.showRules ? 
+          <RulesView /> : 
+          <MainContainer showRulesToggle={this.showRulesToggle}/>
+        }
       </div>
     );
   }
