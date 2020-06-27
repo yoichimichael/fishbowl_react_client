@@ -19,7 +19,8 @@ class SigninContainer extends Component {
         <h1 className={styles.h1}>
           FISHBOWL
         </h1>
-        <img 
+        <img
+          className={styles.icon} 
           src="../../icons/fishbowl/fishbowl_01.svg"
           alt="fishbowl icon"
         />
