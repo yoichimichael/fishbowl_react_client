@@ -24,7 +24,7 @@ class App extends Component {
       <div className="App">
         <NavBar />
         {this.state.showRules ? 
-          <RulesView /> : 
+          <RulesView showRulesToggle={this.showRulesToggle}/> : 
           <MainContainer showRulesToggle={this.showRulesToggle}/>
         }
       </div>

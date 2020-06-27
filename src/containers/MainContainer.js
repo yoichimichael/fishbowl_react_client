@@ -1,20 +1,13 @@
 import React, { Component } from 'react'
+import SigninContainer from './SigninContainer'
 import styles from '../stylesheets/MainContainer.module.css'
 
 class MainContainer extends Component {
 
-  handleClick = () => {
-    this.props.showRulesToggle()
-  }; 
-
   render(){
     return (
       <div className={styles.mainDiv}>
-        <h1>Main Container</h1>
-        <input 
-          type="button" 
-          value="Rules" 
-          onClick={this.handleClick}></input>
+        <SigninContainer showRulesToggle={this.props.showRulesToggle}/>
       </div>
     )
   }

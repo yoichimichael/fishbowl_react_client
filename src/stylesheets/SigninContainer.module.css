@@ -1,0 +1,11 @@
+.h1 {
+  margin: 0px;
+  font-family: Dosis, "Baloo 2", "IBM Plex Mono"
+}
+
+.rulesButton {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  margin-left: -26px;
+}

@@ -21,6 +21,8 @@ export default class RulesView extends Component {
           page: prevState.page + 1
         }
       })
+    } else if (e.target.value === "Home") {
+      this.props.showRulesToggle()
     }
   };
 
@@ -56,7 +58,13 @@ export default class RulesView extends Component {
             onClick={this.handleClick}
             ></input>
           <br></br>
-          <input type="button" className={styles.homeButton} value="Home"></input>
+          <input 
+            type="button" 
+            className={styles.homeButton} 
+            value="Home"
+            onClick={this.handleClick}
+          >
+          </input>
         </div>
       </div>
     );
