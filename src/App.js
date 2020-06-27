@@ -1,16 +1,25 @@
-import React from 'react';
+import React, { Component } from 'react';
 // import logo from './logo.svg';
 import './App.css';
 import NavBar from './components/NavBar.js'
+import MainContainer from './containers/MainContainer';
 import RulesView from './components/RulesView.js'
 
-function App() {
-  return (
-    <div className="App">
-      <NavBar />
-      <RulesView />
-    </div>
-  );
+class App extends Component {
+  
+  state = {
+    showRules: false
+  }
+
+  render(){
+    return (
+      <div className="App">
+        <NavBar />
+        <MainContainer />
+        <RulesView />
+      </div>
+    );
+  }
 }
 
 export default App;

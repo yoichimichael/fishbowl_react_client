@@ -28,17 +28,14 @@ export default class RulesView extends Component {
     switch(pageNum){
       case 2:
         return page2
-        break;
       case 3:
         return page3
-        break;
       default:
         return page1
     }
   }
 
   render() {
-    console.log(this.state.page)
     return (
       <div className={styles.rulesDiv}>
         <h1 className={styles.h1}>Rules</h1>
@@ -68,7 +65,7 @@ export default class RulesView extends Component {
 
 
 const page1 = "Fishbowl is a 3-round parlour-style game. 4 or more \    players split into two teams. Teams take turns with a performer from \ their team trying to get their teammates to guess what is written on \ player-submitted cards randomly selected from a collective \
-'fishbowl.' While the cards are reused, the same each round differs \
+'fishbowl.' While the cards are reused, each round differs \
 in performance rules. The team with the most points wins."
 
 const page2 = "4 players minimum. Teams can be uneven. Each player \ submits 5 - 10 cards, depending on the of number of players, to the \
