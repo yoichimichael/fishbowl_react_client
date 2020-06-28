@@ -72,12 +72,8 @@ export default class RulesView extends Component {
 }
 
 
-const page1 = "Fishbowl is a 3-round parlour-style game. 4 or more \    players split into two teams. Teams take turns with a performer from \ their team trying to get their teammates to guess what is written on \ player-submitted cards randomly selected from a collective \
-'fishbowl.' While the cards are reused, each round differs \
-in performance rules. The team with the most points wins."
+const page1 = "Fishbowl is a 3-round parlour-style game. 4 or more    players split into two teams. Teams take turns with a performer from their team trying to get their teammates to guess what is written on player-submitted cards randomly selected from a collective 'fishbowl.' While the cards are reused, each round differs in performance rules. The team with the most points wins."
 
-const page2 = "4 players minimum. Teams can be uneven. Each player \ submits 5 - 10 cards, depending on the of number of players, to the \
-'fishbowl.' Each card must have a word or phrase of player’s \
-choice. The word or phrase can be anything. Each team takes turns. \ During a turn, one team member acts as the 'performer.' They have 1 \ minute to get their teammates to guess the contents of as many \ randomly selected cards as possible."
+const page2 = "4 players minimum. Teams can be uneven. Each player submits 5 - 10 cards, depending on the of number of players, to the 'fishbowl.' Each card must have a word or phrase of player’s choice. The word or phrase can be anything. Each team takes turns. During a turn, one team member acts as the 'performer.' They have 1 minute to get their teammates to guess the contents of as many randomly selected cards as possible."
 
 const page3 = "Even more rules, can you believe it???"

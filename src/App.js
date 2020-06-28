@@ -8,7 +8,8 @@ import RulesView from './components/RulesView.js'
 class App extends Component {
   
   state = {
-    showRules: false
+    showRules: false,
+    showForms: false
   }
 
   showRulesToggle = () => {
@@ -19,13 +20,32 @@ class App extends Component {
     })
   }
 
+  showFormsToggle = () => {
+    this.setState(prevState => {
+      return {
+        showForms: !prevState.showForms
+      }
+    })
+  }
+
+  setToHome = () => {
+    this.setState({
+      showRules: false,
+      showForms: false
+    })
+  };
+
   render(){
     return (
       <div className="App">
-        <NavBar />
+        <NavBar setToHome={this.setToHome}/>
         {this.state.showRules ? 
           <RulesView showRulesToggle={this.showRulesToggle}/> : 
-          <MainContainer showRulesToggle={this.showRulesToggle}/>
+          <MainContainer 
+            showRulesToggle={this.showRulesToggle}
+            showFormsToggle={this.showFormsToggle}
+            showForms={this.state.showForms}
+          />
         }
       </div>
     );

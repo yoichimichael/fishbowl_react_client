@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
+import HomeView from '../components/HomeView.js'
+import FormContainer from './FormContainer.js'
 import styles from '../stylesheets/SigninContainer.module.css'
 
 class SigninContainer extends Component {
   
   state = {
+    formToggle: false
+  }
 
-  }
-  
-  handleClick = (e) => {
-    if (e.target.value === "Rules"){
-      this.props.showRulesToggle()
-    }
-  }
-  
+  formToggle = () => {
+    this.setState
+  };
+
   render(){
     return(
       <>
@@ -24,12 +24,14 @@ class SigninContainer extends Component {
           src="../../icons/fishbowl/fishbowl_01.svg"
           alt="fishbowl icon"
         />
-        <input
-          className={styles.rulesButton} 
-          type="button" 
-          value="Rules" 
-          onClick={this.handleClick}>
-        </input>
+        {this.props.showForms ? 
+          <FormContainer /> :
+          <HomeView 
+            showRulesToggle={this.props.showRulesToggle}
+            showFormsToggle={this.props.showFormsToggle}
+          />
+        }
+        
       </>
     )
   }

@@ -7,7 +7,11 @@ class MainContainer extends Component {
   render(){
     return (
       <div className={styles.mainDiv}>
-        <SigninContainer showRulesToggle={this.props.showRulesToggle}/>
+        <SigninContainer 
+          showRulesToggle={this.props.showRulesToggle}
+          showFormsToggle={this.props.showFormsToggle}
+          showForms={this.props.showForms}
+          />
       </div>
     )
   }
