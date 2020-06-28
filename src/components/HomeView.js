@@ -8,8 +8,10 @@ class HomeView extends Component {
       this.props.showRulesToggle()
     } else if (e.target.value === "Host New Game"){
       this.props.showFormsToggle()
+      this.props.showHost()
     } else if (e.target.value === "Join Game"){
       this.props.showFormsToggle()
+      this.props.showPlayer()
     }
   }
 

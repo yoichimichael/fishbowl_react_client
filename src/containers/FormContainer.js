@@ -12,8 +12,11 @@ class FormContainer extends Component {
   render(){
     return(
       <>
-        <HostForm />
-        <PlayerForm />
+        {this.props.showHostSignin ? 
+          <HostForm /> :
+          <PlayerForm />
+        }
+        
       </>
     )
   }
