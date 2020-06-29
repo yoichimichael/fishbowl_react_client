@@ -35,6 +35,17 @@ class App extends Component {
     })
   };
 
+  // startGameRequest = () => {
+  //   fetch('gameURL', {
+  //     method: 'POST',
+  //     headers: headers,
+  //     body: JSON.stringify({
+  //       name: "jed"
+  //     })
+  //   })
+
+  // };
+
   render(){
     return (
       <div className="App">
