@@ -4,6 +4,14 @@ import styles from '../stylesheets/MainContainer.module.css'
 
 class MainContainer extends Component {
 
+  state = {
+    game: null
+  }
+
+  addGame = () => {
+    
+  };
+
   render(){
     return (
       <div className={styles.mainDiv}>
