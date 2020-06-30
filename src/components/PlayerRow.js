@@ -10,16 +10,20 @@ class PlayerRow extends Component {
     return(
       <tr>
         <td 
-          style={{"text-decoration": "underline"}}>Dummy Player
+          style={{"textDecoration": "underline"}}>Dummy Player
         </td>
         <td>
           <input
             type="radio"
+            name="playerSelect"
+            value="A"
           />
         </td>
         <td>
           <input
             type="radio"
+            name="playerSelect"
+            value="B"
           />
         </td>
       </tr>

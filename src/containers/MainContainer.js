@@ -21,7 +21,8 @@ class MainContainer extends Component {
       showFormsToggle, 
       addGame, 
       addPlayer,
-      game
+      game,
+      addToPlayers
     } = this.props
 
     switch(this.state.containerNum){
@@ -35,6 +36,7 @@ class MainContainer extends Component {
             addPlayer={addPlayer}
             game={game}
             changeContainerNum={this.changeContainerNum}
+            addToPlayers={addToPlayers}
           />
         )
       case 2:

@@ -16,6 +16,7 @@ class FormContainer extends Component {
       addGame,
       addPlayer,
       game,
+      addToPlayers,
       changeContainerNum
     } = this.props
 
@@ -26,6 +27,7 @@ class FormContainer extends Component {
             addGame={addGame}
             addPlayer={addPlayer}
             game={game}
+            addToPlayers={addToPlayers}
             changeContainerNum={changeContainerNum}
           /> :
           <PlayerForm />

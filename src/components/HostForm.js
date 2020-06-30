@@ -40,6 +40,7 @@ class HostForm extends Component {
         const playerObj = game.data.attributes.host
         this.props.addGame(gameObj)
         this.props.addPlayer(playerObj)
+        this.props.addToPlayers(playerObj)
         this.props.changeContainerNum(2)
       })
   }

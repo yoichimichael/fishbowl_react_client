@@ -58,27 +58,31 @@ class TeamAssignForm extends Component {
           <p className={styles.team}>A/B</p>
         </div> */}
         <table className={styles.table}>
-          <tr>
-            <th>Player</th>
-            <th>A</th>
-            <th>B</th>
-          </tr>
-          <tr>
-            <td style={{"text-decoration": "underline"}}>Dummy Player</td>
-            <td>
-              <input
-                type="radio"
-              />
-            </td>
-            <td>
-              <input
-                type="radio"
-              />
-            </td>
-          </tr>
-          <PlayerRow/>
-          <PlayerRow/>
-          <PlayerRow/>
+          <thead>
+            <tr>
+              <th>Player</th>
+              <th>A</th>
+              <th>B</th>
+            </tr>
+          </thead>
+          <tbody>          
+            {/* <tr>
+              <td style={{"text-decoration": "underline"}}>Dummy Player</td>
+              <td>
+                <input
+                  type="radio"
+                />
+              </td>
+              <td>
+                <input
+                  type="radio"
+                />
+              </td>
+            </tr> */}
+            <PlayerRow/>
+            <PlayerRow/>
+            <PlayerRow/>
+          </tbody>
         </table>
       </>
     )

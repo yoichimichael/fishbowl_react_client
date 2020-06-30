@@ -25,6 +25,7 @@ class SigninContainer extends Component {
       addGame,
       addPlayer,
       game,
+      addToPlayers,
       changeContainerNum
     } = this.props
 
@@ -44,6 +45,7 @@ class SigninContainer extends Component {
             addGame={addGame}
             addPlayer={addPlayer}
             game={game}
+            addToPlayers={addToPlayers}
             changeContainerNum={changeContainerNum}
           /> :
           <HomeView 

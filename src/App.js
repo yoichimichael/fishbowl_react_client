@@ -12,7 +12,8 @@ class App extends Component {
     showRules: false,
     showForms: false,
     game: null,
-    player: null
+    player: null,
+    players: []
   }
 
   showRulesToggle = () => {
@@ -46,16 +47,25 @@ class App extends Component {
     this.setState({player: playerObj})
   };
 
+  addToPlayers = (playerObj) => {
+    this.setState(prevState => {
+      return {
+        players: [...prevState.players, playerObj]
+      }
+    })
+  };
+
 
   render(){
-    console.log(this.state.game, this.state.player)
+    console.log(this.state.game, this.state.players.count)
 
     const {
       setToHome,
       showRulesToggle,
       showFormsToggle,
       addGame,
-      addPlayer
+      addPlayer,
+      addToPlayers
     } = this
 
     return (
@@ -71,6 +81,7 @@ class App extends Component {
               addGame={addGame}
               addPlayer={addPlayer}
               game={this.state.game}
+              addToPlayers={addToPlayers}
             />
           }
         </div>
