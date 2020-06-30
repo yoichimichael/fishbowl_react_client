@@ -23,7 +23,8 @@ class SigninContainer extends Component {
       showRulesToggle,
       showFormsToggle,
       addGame,
-      addPlayer
+      addPlayer,
+      game
     } = this.props
 
     return(
@@ -41,6 +42,7 @@ class SigninContainer extends Component {
             showHostSignin={this.state.showHostSignin}
             addGame={addGame}
             addPlayer={addPlayer}
+            game={game}
           /> :
           <HomeView 
             showHost={this.showHost}

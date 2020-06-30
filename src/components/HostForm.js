@@ -38,8 +38,9 @@ class HostForm extends Component {
       .then(game => {
         const gameObj = game.data
         const playerObj = game.data.attributes.host
-        this.props.addGame(gameObj);
+        this.props.addGame(gameObj)
         this.props.addPlayer(playerObj)
+        this.props.showTeamAssignToggle()
       })
   }
 

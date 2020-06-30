@@ -15,7 +15,8 @@ class MainContainer extends Component {
       showForms, 
       showFormsToggle, 
       addGame, 
-      addPlayer
+      addPlayer,
+      game
     } = this.props
 
     return (
@@ -26,6 +27,7 @@ class MainContainer extends Component {
           showForms={showForms}
           addGame={addGame}
           addPlayer={addPlayer}
+          game={game}
         />
       </div>
     )

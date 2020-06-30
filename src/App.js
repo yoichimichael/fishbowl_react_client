@@ -48,17 +48,27 @@ class App extends Component {
 
   render(){
     console.log(this.state.game, this.state.player)
+
+    const {
+      setToHome,
+      showRulesToggle,
+      showFormsToggle,
+      addGame,
+      addPlayer
+    } = this
+
     return (
       <div className="App">
-        <NavBar setToHome={this.setToHome}/>
+        <NavBar setToHome={setToHome}/>
         {this.state.showRules ? 
-          <RulesView showRulesToggle={this.showRulesToggle}/> : 
+          <RulesView showRulesToggle={showRulesToggle}/> : 
           <MainContainer 
-            showRulesToggle={this.showRulesToggle}
-            showFormsToggle={this.showFormsToggle}
+            showRulesToggle={showRulesToggle}
+            showFormsToggle={showFormsToggle}
             showForms={this.state.showForms}
-            addGame={this.addGame}
-            addPlayer={this.addPlayer}
+            addGame={addGame}
+            addPlayer={addPlayer}
+            game={this.state.game}
           />
         }
       </div>
