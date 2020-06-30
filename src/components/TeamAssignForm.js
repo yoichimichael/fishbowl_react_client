@@ -4,8 +4,8 @@ import PlayerRow from './PlayerRow.js'
 
 class TeamAssignForm extends Component {
   state = {
-    teamA: '',
-    teamB: ''
+    teamAName: '',
+    teamBName: ''
   }
 
   handleChange = (e) => {
@@ -15,12 +15,20 @@ class TeamAssignForm extends Component {
   };
 
   render(){
-    console.log(this.state.teamA, this.state.teamB)   
+    console.log(this.state.teamAName, this.state.teamBName)   
+
+    const {
+      game,
+      players,
+      teamAId,
+      teamBId
+    } = this.props
+
     return(
       <>
         <h3 className={styles.h3}>Join Code:</h3>
         <h1 className={styles.h1}>
-          {this.props.game.attributes.join_code}
+          {game.attributes.join_code}
         </h1>
         <input
           className={styles.startGameButton}
@@ -34,9 +42,9 @@ class TeamAssignForm extends Component {
           <input 
             className={styles.teamAInput}
             id="teamA"
-            name="teamA" 
+            name="teamAName" 
             type="text" 
-            value={this.state.teamA}
+            value={this.state.teamAName}
             onChange={this.handleChange}
           />
         </div>
@@ -46,9 +54,9 @@ class TeamAssignForm extends Component {
           <input 
             className={styles.teamBInput}
             id="teamB"
-            name="teamB" 
+            name="teamBName" 
             type="text" 
-            value={this.state.teamB}
+            value={this.state.teamBName}
             onChange={this.handleChange}
           />
         </div>
@@ -66,6 +74,12 @@ class TeamAssignForm extends Component {
             </tr>
           </thead>
           <tbody>          
+            {players.map(player => <PlayerRow 
+              key={player.id} 
+              {...player}
+              teamAId={teamAId}
+              teamBId={teamBId}
+            />)}
             {/* <tr>
               <td style={{"text-decoration": "underline"}}>Dummy Player</td>
               <td>
@@ -79,9 +93,9 @@ class TeamAssignForm extends Component {
                 />
               </td>
             </tr> */}
+            {/* <PlayerRow/>
             <PlayerRow/>
-            <PlayerRow/>
-            <PlayerRow/>
+            <PlayerRow/> */}
           </tbody>
         </table>
       </>

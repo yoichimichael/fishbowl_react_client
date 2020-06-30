@@ -22,7 +22,11 @@ class MainContainer extends Component {
       addGame, 
       addPlayer,
       game,
-      addToPlayers
+      players,
+      addToPlayers,
+      addTeamIds,
+      teamAId,
+      teamBId
     } = this.props
 
     switch(this.state.containerNum){
@@ -37,10 +41,16 @@ class MainContainer extends Component {
             game={game}
             changeContainerNum={this.changeContainerNum}
             addToPlayers={addToPlayers}
+            addTeamIds={addTeamIds}
           />
         )
       case 2:
-        return <TeamAssignForm game={game}/>
+        return <TeamAssignForm 
+          game={game}
+          players={players}
+          teamAId={teamAId}
+          teamBId={teamBId}
+        />
     }
   }
 }

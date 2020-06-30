@@ -12,6 +12,8 @@ class App extends Component {
     showRules: false,
     showForms: false,
     game: null,
+    teamAId: undefined,
+    teamBId: undefined,
     player: null,
     players: []
   }
@@ -55,9 +57,13 @@ class App extends Component {
     })
   };
 
+  addTeamIds = (teamAId, teamBId) => {
+    this.setState({teamAId: teamAId, teamBId: teamBId})
+  };
+
 
   render(){
-    console.log(this.state.game, this.state.players.count)
+    console.log(this.state.teamAId, this.state.teamBId)
 
     const {
       setToHome,
@@ -65,7 +71,8 @@ class App extends Component {
       showFormsToggle,
       addGame,
       addPlayer,
-      addToPlayers
+      addToPlayers,
+      addTeamIds
     } = this
 
     return (
@@ -81,7 +88,11 @@ class App extends Component {
               addGame={addGame}
               addPlayer={addPlayer}
               game={this.state.game}
+              players={this.state.players}
               addToPlayers={addToPlayers}
+              addTeamIds={addTeamIds}
+              teamAId={this.state.teamAId}
+              teamBId={this.state.teamBId}
             />
           }
         </div>
