@@ -19,7 +19,6 @@ class HostForm extends Component {
       code +=  
         chars[Math.floor(Math.random() * chars.length)]; 
     } 
-    // console.log(code.toUpperCase());
     return code.toUpperCase()
   };
 
@@ -35,8 +34,13 @@ class HostForm extends Component {
         host_name: this.state.hostName
       }) 
     })
-  .then(resp => resp.json())
-  .then(console.log)
+      .then(resp => resp.json())
+      .then(game => {
+        const gameObj = game.data
+        const playerObj = game.data.attributes.host
+        this.props.addGame(gameObj);
+        this.props.addPlayer(playerObj)
+      })
   }
 
   render(){

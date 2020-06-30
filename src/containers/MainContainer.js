@@ -8,18 +8,25 @@ class MainContainer extends Component {
     game: null
   }
 
-  addGame = () => {
-    
-  };
-
   render(){
+
+    const { 
+      showRulesToggle, 
+      showForms, 
+      showFormsToggle, 
+      addGame, 
+      addPlayer
+    } = this.props
+
     return (
       <div className={styles.mainDiv}>
         <SigninContainer 
-          showRulesToggle={this.props.showRulesToggle}
-          showFormsToggle={this.props.showFormsToggle}
-          showForms={this.props.showForms}
-          />
+          showRulesToggle={showRulesToggle}
+          showFormsToggle={showFormsToggle}
+          showForms={showForms}
+          addGame={addGame}
+          addPlayer={addPlayer}
+        />
       </div>
     )
   }

@@ -10,10 +10,20 @@ class FormContainer extends Component {
   }
 
   render(){
+
+    const {
+      showHostSignin,
+      addGame,
+      addPlayer
+    } = this.props
+
     return(
       <>
-        {this.props.showHostSignin ? 
-          <HostForm /> :
+        {showHostSignin ? 
+          <HostForm
+            addGame={addGame}
+            addPlayer={addPlayer}
+          /> :
           <PlayerForm />
         }
         

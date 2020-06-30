@@ -18,6 +18,14 @@ class SigninContainer extends Component {
   }
 
   render(){
+
+    const {
+      showRulesToggle,
+      showFormsToggle,
+      addGame,
+      addPlayer
+    } = this.props
+
     return(
       <>
         <h1 className={styles.h1}>
@@ -31,12 +39,14 @@ class SigninContainer extends Component {
         {this.props.showForms ? 
           <FormContainer 
             showHostSignin={this.state.showHostSignin}
+            addGame={addGame}
+            addPlayer={addPlayer}
           /> :
           <HomeView 
             showHost={this.showHost}
             showPlayer={this.showPlayer}
-            showRulesToggle={this.props.showRulesToggle}
-            showFormsToggle={this.props.showFormsToggle}
+            showRulesToggle={showRulesToggle}
+            showFormsToggle={showFormsToggle}
           />
         }
         

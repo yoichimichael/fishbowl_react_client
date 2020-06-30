@@ -9,7 +9,9 @@ class App extends Component {
   
   state = {
     showRules: false,
-    showForms: false
+    showForms: false,
+    game: null,
+    player: null
   }
 
   showRulesToggle = () => {
@@ -35,18 +37,17 @@ class App extends Component {
     })
   };
 
-  // startGameRequest = () => {
-  //   fetch('gameURL', {
-  //     method: 'POST',
-  //     headers: headers,
-  //     body: JSON.stringify({
-  //       name: "jed"
-  //     })
-  //   })
+  addGame = (gameObj) => {
+    this.setState({game: gameObj})
+  };
 
-  // };
+  addPlayer = (playerObj) => {
+    this.setState({player: playerObj})
+  };
+
 
   render(){
+    console.log(this.state.game, this.state.player)
     return (
       <div className="App">
         <NavBar setToHome={this.setToHome}/>
@@ -56,6 +57,8 @@ class App extends Component {
             showRulesToggle={this.showRulesToggle}
             showFormsToggle={this.showFormsToggle}
             showForms={this.state.showForms}
+            addGame={this.addGame}
+            addPlayer={this.addPlayer}
           />
         }
       </div>
