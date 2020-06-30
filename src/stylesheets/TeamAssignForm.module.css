@@ -5,7 +5,19 @@
 
 .h1 {
   font-family: Dosis, "Baloo 2", "IBM Plex Mono";
+  margin: 10px;
   color: #F49A11
+}
+
+.startGameButton {
+  margin-bottom: 20px;
+  position: relative;
+  background-color: #F49A11;
+  border: none;
+  border-radius: 4px;
+  padding: 15px 32px;
+  color: white;
+  font-size: 20px;
 }
 
 .teamAInputDiv {
@@ -24,4 +36,23 @@
 
 .teamBInput {
   width: 75%
+}
+
+.tableHeaders {
+  margin-top: 50px;
+}
+
+.player {
+  position: absolute;
+  margin-left: 40px;
+}
+
+.team {
+  position: absolute;
+  margin-left: 250px;
+}
+
+.table {
+  width: 100%;
+  margin-top: 50px;
 }

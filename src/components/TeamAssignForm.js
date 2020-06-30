@@ -21,6 +21,12 @@ class TeamAssignForm extends Component {
         <h1 className={styles.h1}>
           {this.props.game.attributes.join_code}
         </h1>
+        <input
+          className={styles.startGameButton}
+          type="button"
+          value="Create Game"
+          // onClick={this.handleClick}
+        />
         <div className={styles.teamAInputDiv}>
           <label htmlFor="teamA">Team A Name:</label>
           <br/>
@@ -44,7 +50,45 @@ class TeamAssignForm extends Component {
             value={this.state.teamB}
             onChange={this.handleChange}
           />
-        </div>  
+        </div>
+        <br/>
+        {/* <div className={styles.tableHeaders}>
+          <p className={styles.player}>Player Name</p>
+          <p className={styles.team}>A/B</p>
+        </div> */}
+        <table className={styles.table}>
+          <tr>
+            <th>Player</th>
+            <th>A</th>
+            <th>B</th>
+          </tr>
+          <tr>
+            <td style={{"text-decoration": "underline"}}>Frankie</td>
+            <td>
+              <input
+                type="radio"
+              />
+            </td>
+            <td>
+              <input
+                type="radio"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td style={{"text-decoration": "underline"}}>Frankie</td>
+            <td>
+              <input
+                type="radio"
+              />
+            </td>
+            <td>
+              <input
+                type="radio"
+              />
+            </td>
+          </tr>
+        </table>
       </>
     )
   }
