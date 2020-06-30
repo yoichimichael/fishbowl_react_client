@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styles from '../stylesheets/TeamAssignForm.module.css'
+import PlayerRow from './PlayerRow.js'
 
 class TeamAssignForm extends Component {
   state = {
@@ -63,7 +64,7 @@ class TeamAssignForm extends Component {
             <th>B</th>
           </tr>
           <tr>
-            <td style={{"text-decoration": "underline"}}>Frankie</td>
+            <td style={{"text-decoration": "underline"}}>Dummy Player</td>
             <td>
               <input
                 type="radio"
@@ -75,19 +76,9 @@ class TeamAssignForm extends Component {
               />
             </td>
           </tr>
-          <tr>
-            <td style={{"text-decoration": "underline"}}>Frankie</td>
-            <td>
-              <input
-                type="radio"
-              />
-            </td>
-            <td>
-              <input
-                type="radio"
-              />
-            </td>
-          </tr>
+          <PlayerRow/>
+          <PlayerRow/>
+          <PlayerRow/>
         </table>
       </>
     )
