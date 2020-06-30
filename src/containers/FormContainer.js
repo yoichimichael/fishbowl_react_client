@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import HostView from './HostView.js'
+import HostForm from '../components/HostForm.js'
 import PlayerForm from '../components/PlayerForm.js'
+
 
 class FormContainer extends Component {
 
@@ -14,16 +15,18 @@ class FormContainer extends Component {
       showHostSignin,
       addGame,
       addPlayer,
-      game
+      game,
+      changeContainerNum
     } = this.props
 
     return(
       <>
         {showHostSignin ? 
-          <HostView
+          <HostForm
             addGame={addGame}
             addPlayer={addPlayer}
             game={game}
+            changeContainerNum={changeContainerNum}
           /> :
           <PlayerForm />
         }

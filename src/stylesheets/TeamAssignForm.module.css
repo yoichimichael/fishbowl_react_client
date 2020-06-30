@@ -1,0 +1,27 @@
+.h3 {
+  margin-top: 0px;
+  font-family: Dosis, "Baloo 2", "IBM Plex Mono";
+}
+
+.h1 {
+  font-family: Dosis, "Baloo 2", "IBM Plex Mono";
+  color: #F49A11
+}
+
+.teamAInputDiv {
+  position: absolute
+}
+
+.teamBInputDiv {
+  position: absolute;
+  margin-left: 160px;
+}
+
+.teamAInput {
+  width: 75%
+
+}
+
+.teamBInput {
+  width: 75%
+}

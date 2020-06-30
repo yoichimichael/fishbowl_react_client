@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 // import logo from './logo.svg';
-import './App.css';
+// import './App.css';
+import styles from './stylesheets/App.module.css'
 import NavBar from './components/NavBar.js'
 import MainContainer from './containers/MainContainer';
 import RulesView from './components/RulesView.js'
@@ -58,19 +59,21 @@ class App extends Component {
     } = this
 
     return (
-      <div className="App">
+      <div className={styles.app}>
         <NavBar setToHome={setToHome}/>
-        {this.state.showRules ? 
-          <RulesView showRulesToggle={showRulesToggle}/> : 
-          <MainContainer 
-            showRulesToggle={showRulesToggle}
-            showFormsToggle={showFormsToggle}
-            showForms={this.state.showForms}
-            addGame={addGame}
-            addPlayer={addPlayer}
-            game={this.state.game}
-          />
-        }
+        <div className={styles.mainDiv}>
+          {this.state.showRules ? 
+            <RulesView showRulesToggle={showRulesToggle}/> : 
+            <MainContainer 
+              showRulesToggle={showRulesToggle}
+              showFormsToggle={showFormsToggle}
+              showForms={this.state.showForms}
+              addGame={addGame}
+              addPlayer={addPlayer}
+              game={this.state.game}
+            />
+          }
+        </div>
       </div>
     );
   }
