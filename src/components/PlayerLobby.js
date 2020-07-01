@@ -1,12 +1,37 @@
 import React, { Component } from 'react'
 import styles from '../stylesheets/PlayerLobby.module.css'
+import TeamColumnRow from './teamColumnRow';
 
 class PlayerLobby extends Component {
   state = {
-
+    teamA: [],
+    teamB: []
   }
 
+  splitPlayersIntoTeams = (players) => {
+    players.forEach(player => {
+      if(player.team.team_letter === "a"){
+        this.setState(prevState => {
+          return {
+            teamA: [...prevState.teamA, player]
+          }
+        })
+      } else {
+        this.setState(prevState => {
+          return {
+            teamB: [...prevState.teamB, player]
+          }
+        })
+      }
+    })
+  };
+
   render(){
+
+    const {
+      teamA,
+      teamB
+    } = this.state
     return (
       <>
         <h1 className={styles.h1}>
@@ -17,15 +42,20 @@ class PlayerLobby extends Component {
           src="../../icons/fishbowl/fishbowl_01.svg"
           alt="fishbowl icon"
         />
+        <h3 className={styles.h3}>Waiting for Host...</h3>
         <div className={styles.teamATable}>
           <table>
             <thead>
               <tr>
-                <th>Team A</th>
+                <th className={styles.teamA}>Team A</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
+              {teamA.map(player => <TeamColumnRow 
+                key={player.id} 
+                name={player.name}
+              />)}
+              {/* <tr>
                 <td>Jake</td>
               </tr>
               <tr>
@@ -33,7 +63,7 @@ class PlayerLobby extends Component {
               </tr>
               <tr>
                 <td>Jim</td>
-              </tr>
+              </tr> */}
             </tbody>
           </table>
         </div>
@@ -41,11 +71,15 @@ class PlayerLobby extends Component {
           <table>
             <thead>
               <tr>
-                <th>Team B</th>
+                <th className={styles.teamB}>Team B</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
+              {teamB.map(player => <TeamColumnRow 
+                key={player.id} 
+                name={player.name}
+              />)}
+              {/* <tr>
                 <td>Shamiq</td>
               </tr>
               <tr>
@@ -53,7 +87,7 @@ class PlayerLobby extends Component {
               </tr>
               <tr>
                 <td>Tetsuro</td>
-              </tr>
+              </tr> */}
             </tbody>
           </table>
         </div>

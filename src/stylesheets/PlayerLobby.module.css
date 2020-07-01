@@ -6,7 +6,10 @@
 .icon {
   height: 100px;
   width: 100px;
-  margin-bottom: 20px;
+}
+
+.h3 {
+  color: #F49A11
 }
 
 .teamATable {
@@ -17,4 +20,12 @@
 .teamBTable {
   position: absolute;
   margin-left: 210px;
+}
+
+.teamA {
+  color: #F49A11
+}
+
+.teamB {
+  color: #84C0F7
 }
