@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import SigninContainer from './SigninContainer'
 import styles from '../stylesheets/MainContainer.module.css'
 import TeamAssignForm from '../components/TeamAssignForm'
+import PlayerLobby from '../components/PlayerLobby'
 
 class MainContainer extends Component {
 
@@ -47,6 +48,8 @@ class MainContainer extends Component {
           teamAId={teamAId}
           teamBId={teamBId}
         />
+      case 3:
+        return <PlayerLobby />
     }
   }
 }

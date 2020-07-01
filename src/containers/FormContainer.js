@@ -32,7 +32,9 @@ class FormContainer extends Component {
             changeContainerNum={changeContainerNum}
             addTeamIds={addTeamIds}
           /> :
-          <PlayerForm />
+          <PlayerForm 
+            changeContainerNum={changeContainerNum}
+          />
         }
         
       </>

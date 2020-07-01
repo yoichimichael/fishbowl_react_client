@@ -15,7 +15,6 @@ class TeamAssignForm extends Component {
   };
 
   render(){
-    console.log(this.state.teamAName, this.state.teamBName)   
 
     const {
       game,
@@ -28,7 +27,7 @@ class TeamAssignForm extends Component {
       <>
         <h3 className={styles.h3}>Join Code:</h3>
         <h1 className={styles.h1}>
-          {game.attributes.join_code}
+          {game.join_code}
         </h1>
         <input
           className={styles.startGameButton}
@@ -61,10 +60,6 @@ class TeamAssignForm extends Component {
           />
         </div>
         <br/>
-        {/* <div className={styles.tableHeaders}>
-          <p className={styles.player}>Player Name</p>
-          <p className={styles.team}>A/B</p>
-        </div> */}
         <table className={styles.table}>
           <thead>
             <tr>

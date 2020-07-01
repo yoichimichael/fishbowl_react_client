@@ -31,9 +31,9 @@ class PlayerForm extends Component {
       }) 
     })
     .then(resp => resp.json())
-    .then(player => {
-      const playerObj = player.data
+    .then(playerObj => {
       console.log(playerObj)
+      this.props.changeContainerNum(3)
     })
     }
   }
