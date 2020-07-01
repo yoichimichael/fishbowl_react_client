@@ -29,8 +29,7 @@ class MainContainer extends Component {
 
     switch(containerNum){
       case 1:
-        return (
-          <SigninContainer 
+        return <SigninContainer 
             showRulesToggle={showRulesToggle}
             showFormsToggle={showFormsToggle}
             showForms={showForms}
@@ -40,8 +39,7 @@ class MainContainer extends Component {
             changeContainerNum={changeContainerNum}
             addToPlayers={addToPlayers}
             addTeamIds={addTeamIds}
-          />
-        )
+        />
       case 2:
         return <TeamAssignForm 
           game={game}

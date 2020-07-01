@@ -31,7 +31,10 @@ class PlayerForm extends Component {
       }) 
     })
     .then(resp => resp.json())
-    .then(console.log)
+    .then(player => {
+      const playerObj = player.data
+      console.log(playerObj)
+    })
     }
   }
 
