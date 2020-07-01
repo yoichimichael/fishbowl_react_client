@@ -6,19 +6,17 @@ import TeamAssignForm from '../components/TeamAssignForm'
 class MainContainer extends Component {
 
   state = {
-    containerNum: 1
+  
   }
-
-  changeContainerNum = (num) => {
-    this.setState({containerNum: num})
-  };
 
   render(){
 
     const { 
       showRulesToggle, 
       showForms, 
-      showFormsToggle, 
+      showFormsToggle,
+      containerNum,
+      changeContainerNum,
       addGame, 
       addPlayer,
       game,
@@ -29,7 +27,7 @@ class MainContainer extends Component {
       teamBId
     } = this.props
 
-    switch(this.state.containerNum){
+    switch(containerNum){
       case 1:
         return (
           <SigninContainer 
@@ -39,7 +37,7 @@ class MainContainer extends Component {
             addGame={addGame}
             addPlayer={addPlayer}
             game={game}
-            changeContainerNum={this.changeContainerNum}
+            changeContainerNum={changeContainerNum}
             addToPlayers={addToPlayers}
             addTeamIds={addTeamIds}
           />

@@ -11,6 +11,7 @@ class App extends Component {
   state = {
     showRules: false,
     showForms: false,
+    containerNum: 1,
     game: null,
     teamAId: undefined,
     teamBId: undefined,
@@ -36,8 +37,9 @@ class App extends Component {
 
   setToHome = () => {
     this.setState({
-      showRules: false,
-      showForms: false
+      showRules: false, 
+      showForms: false, 
+      containerNum: 1
     })
   };
 
@@ -61,6 +63,10 @@ class App extends Component {
     this.setState({teamAId: teamAId, teamBId: teamBId})
   };
 
+  changeContainerNum = (num) => {
+    this.setState({containerNum: num})
+  };
+
 
   render(){
     console.log(this.state.teamAId, this.state.teamBId)
@@ -69,6 +75,7 @@ class App extends Component {
       setToHome,
       showRulesToggle,
       showFormsToggle,
+      changeContainerNum,
       addGame,
       addPlayer,
       addToPlayers,
@@ -85,6 +92,8 @@ class App extends Component {
               showRulesToggle={showRulesToggle}
               showFormsToggle={showFormsToggle}
               showForms={this.state.showForms}
+              containerNum={this.state.containerNum}
+              changeContainerNum={changeContainerNum}
               addGame={addGame}
               addPlayer={addPlayer}
               game={this.state.game}
