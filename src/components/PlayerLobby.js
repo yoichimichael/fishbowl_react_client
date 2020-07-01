@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import styles from '../stylesheets/PlayerLobby.module.css'
-import TeamColumnRow from './teamColumnRow';
+import PlayerNameRow from './PlayerNameRow';
 
 class PlayerLobby extends Component {
   state = {
@@ -51,7 +51,7 @@ class PlayerLobby extends Component {
               </tr>
             </thead>
             <tbody>
-              {teamA.map(player => <TeamColumnRow 
+              {teamA.map(player => <PlayerNameRow 
                 key={player.id} 
                 name={player.name}
               />)}
@@ -75,7 +75,7 @@ class PlayerLobby extends Component {
               </tr>
             </thead>
             <tbody>
-              {teamB.map(player => <TeamColumnRow 
+              {teamB.map(player => <PlayerNameRow 
                 key={player.id} 
                 name={player.name}
               />)}
