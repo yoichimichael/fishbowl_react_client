@@ -12,10 +12,10 @@ class App extends Component {
     showRules: false,
     showForms: false,
     containerNum: 1,
-    game: null,
+    game: undefined,
     teamAId: undefined,
     teamBId: undefined,
-    player: null,
+    player: undefined,
     players: []
   }
 
@@ -39,7 +39,8 @@ class App extends Component {
     this.setState({
       showRules: false, 
       showForms: false, 
-      containerNum: 1
+      containerNum: 1,
+      players: []
     })
   };
 
@@ -69,7 +70,7 @@ class App extends Component {
 
 
   render(){
-    console.log(this.state.teamAId, this.state.teamBId)
+    console.log(this.state.game)
 
     const {
       setToHome,

@@ -38,6 +38,7 @@ class HostForm extends Component {
       .then(game => {
         const gameObj = game.data
         const playerObj = game.data.attributes.host
+        console.log(playerObj)
         const teamAId = game.data.attributes.teams[0].id
         const teamBId = game.data.attributes.teams[1].id
         this.props.addGame(gameObj)
