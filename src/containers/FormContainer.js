@@ -18,7 +18,8 @@ class FormContainer extends Component {
       game,
       addToPlayers,
       changeContainerNum,
-      addTeamIds
+      addTeamIds,
+      updatePlayers
     } = this.props
 
     return(
@@ -34,6 +35,8 @@ class FormContainer extends Component {
           /> :
           <PlayerForm 
             changeContainerNum={changeContainerNum}
+            updatePlayers={updatePlayers}
+            addPlayer={addPlayer}
           />
         }
         

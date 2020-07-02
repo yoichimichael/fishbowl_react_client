@@ -32,6 +32,9 @@ class PlayerLobby extends Component {
       teamA,
       teamB
     } = this.state
+
+    // this.splitPlayersIntoTeams(this.props.players)
+
     return (
       <>
         <h1 className={styles.h1}>

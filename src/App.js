@@ -16,7 +16,9 @@ class App extends Component {
     teamAId: undefined,
     teamBId: undefined,
     player: undefined,
-    players: []
+    players: [],
+    teamARoster: [],
+    teamBRoster: []
   }
 
   showRulesToggle = () => {
@@ -68,6 +70,32 @@ class App extends Component {
     this.setState({containerNum: num})
   };
 
+  updatePlayers = (gameId) => {
+    fetch(`http://localhost:3000/games/${gameId}`)
+      .then(resp => resp.json())
+      .then(game => {
+        this.setState({players: game.players})
+      })
+  };
+
+  splitPlayersIntoTeams = (players) => {
+    players.forEach(player => {
+      if(player.team.team_letter === "a"){
+        this.setState(prevState => {
+          return {
+            teamARoster: [...prevState.teamARoster, player]
+          }
+        })
+      } else {
+        this.setState(prevState => {
+          return {
+            teamBRoster: [...prevState.teamBRoster, player]
+          }
+        })
+      }
+    })
+  };
+
 
   render(){
     console.log(this.state.game)
@@ -80,7 +108,9 @@ class App extends Component {
       addGame,
       addPlayer,
       addToPlayers,
-      addTeamIds
+      addTeamIds,
+      updatePlayers,
+      splitPlayersIntoTeams
     } = this
 
     return (
@@ -103,6 +133,7 @@ class App extends Component {
               addTeamIds={addTeamIds}
               teamAId={this.state.teamAId}
               teamBId={this.state.teamBId}
+              updatePlayers={updatePlayers}
             />
           }
         </div>
