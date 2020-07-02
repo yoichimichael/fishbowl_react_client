@@ -45,6 +45,13 @@ class HostForm extends Component {
         this.props.addToPlayers(hostObj)        
         this.props.addTeamIds(teamAId, teamBId)
         this.props.changeContainerNum(2)
+        const pullPlayersInterval = setInterval(
+          this.props.updatePlayers, 
+          2000, 
+          gameObj.id
+        )
+        this.props.addIntervalId(pullPlayersInterval)
+        // const helloInterval = setInterval(() => console.log('Hello World!'), 2000)
       })
   }
 

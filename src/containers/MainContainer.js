@@ -29,24 +29,28 @@ class MainContainer extends Component {
       teamARoster,
       teamBRoster,
       updatePlayers,
-      splitPlayersIntoTeams
+      splitPlayersIntoTeams,
+      addIntervalId
     } = this.props
+
+    console.log(teamARoster, teamBRoster)
 
     switch(containerNum){
       case 1:
         return <SigninContainer 
-            showRulesToggle={showRulesToggle}
-            showFormsToggle={showFormsToggle}
-            showForms={showForms}
-            addGame={addGame}
-            addPlayer={addPlayer}
-            game={game}
-            players={players}
-            changeContainerNum={changeContainerNum}
-            addToPlayers={addToPlayers}
-            addTeamIds={addTeamIds}
-            updatePlayers={updatePlayers}
-            splitPlayersIntoTeams={splitPlayersIntoTeams}
+          showRulesToggle={showRulesToggle}
+          showFormsToggle={showFormsToggle}
+          showForms={showForms}
+          addGame={addGame}
+          addPlayer={addPlayer}
+          game={game}
+          players={players}
+          changeContainerNum={changeContainerNum}
+          addToPlayers={addToPlayers}
+          addTeamIds={addTeamIds}
+          updatePlayers={updatePlayers}
+          splitPlayersIntoTeams={splitPlayersIntoTeams}
+          addIntervalId={addIntervalId}
         />
       case 2:
         return <TeamAssignForm 

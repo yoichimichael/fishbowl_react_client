@@ -4,39 +4,18 @@ import PlayerNameRow from './PlayerNameRow';
 
 class PlayerLobby extends Component {
   state = {
-    teamA: this.props.teamARoster,
-    teamB: this.props.teamBRoster
+    // teamARoster: this.props.teamARoster,
+    // teamBRoster: this.props.teamBRoster
   }
-
-  // splitPlayersIntoTeams = (players) => {
-  //   players.forEach(player => {
-  //     if(player.team.team_letter === "a"){
-  //       this.setState(prevState => {
-  //         return {
-  //           teamA: [...prevState.teamA, player]
-  //         }
-  //       })
-  //     } else {
-  //       this.setState(prevState => {
-  //         return {
-  //           teamB: [...prevState.teamB, player]
-  //         }
-  //       })
-  //     }
-  //   })
-  // };
 
   render(){
 
-    // console.log(this.state.teamA, this.state.teamB)
-
-
     const {
-      teamA,
-      teamB
-    } = this.state
+      teamARoster,
+      teamBRoster
+    } = this.props
 
-    // this.splitPlayersIntoTeams(this.props.players)
+    // console.log(teamARoster, teamBRoster)
 
     return (
       <>
@@ -57,7 +36,7 @@ class PlayerLobby extends Component {
               </tr>
             </thead>
             <tbody>
-              {teamA.map(player => <PlayerNameRow 
+              {teamARoster.map(player => <PlayerNameRow 
                 key={player.id} 
                 name={player.name}
               />)}
@@ -81,7 +60,7 @@ class PlayerLobby extends Component {
               </tr>
             </thead>
             <tbody>
-              {teamB.map(player => <PlayerNameRow 
+              {teamBRoster.map(player => <PlayerNameRow 
                 key={player.id} 
                 name={player.name}
               />)}

@@ -12,7 +12,7 @@ class PlayerRow extends Component {
 
   render(){
 
-    console.log(this.state.team_id)
+    // console.log(this.state.team_id)
 
     const {
       name,

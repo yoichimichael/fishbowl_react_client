@@ -30,7 +30,8 @@ class SigninContainer extends Component {
       changeContainerNum,
       addTeamIds,
       updatePlayers,
-      splitPlayersIntoTeams
+      splitPlayersIntoTeams,
+      addIntervalId
     } = this.props
 
     return(
@@ -55,6 +56,7 @@ class SigninContainer extends Component {
             addTeamIds={addTeamIds}
             updatePlayers={updatePlayers}
             splitPlayersIntoTeams={splitPlayersIntoTeams}
+            addIntervalId={addIntervalId}
           /> :
           <HomeView 
             showHost={this.showHost}

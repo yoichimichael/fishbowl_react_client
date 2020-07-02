@@ -33,7 +33,12 @@ class PlayerForm extends Component {
       .then(resp => resp.json())
       .then(playerObj => {
         this.props.addPlayer(playerObj)
-        this.props.updatePlayers(playerObj.game_id)
+        const pullPlayersInterval = setInterval(
+          this.props.updatePlayers, 
+          2000, 
+          playerObj.game_id
+        )
+        this.props.addIntervalId(pullPlayersInterval)
         // this.props.splitPlayersIntoTeams(this.props.players)
         this.props.changeContainerNum(3)
       })

@@ -18,7 +18,8 @@ class App extends Component {
     player: undefined,
     players: [],
     teamARoster: [],
-    teamBRoster: []
+    teamBRoster: [],
+    intervalId: null
   }
 
   showRulesToggle = () => {
@@ -39,11 +40,19 @@ class App extends Component {
 
   setToHome = () => {
     this.setState({
-      showRules: false, 
-      showForms: false, 
-      containerNum: 1,
-      players: []
+      showRules: false,
+    showForms: false,
+    containerNum: 1,
+    game: undefined,
+    teamAId: undefined,
+    teamBId: undefined,
+    player: undefined,
+    players: [],
+    teamARoster: [],
+    teamBRoster: [],
+    intervalId: null
     })
+    clearInterval(this.state.intervalId)
   };
 
   addGame = (gameObj) => {
@@ -70,12 +79,21 @@ class App extends Component {
     this.setState({containerNum: num})
   };
 
+  addIntervalId = (id) => {
+    this.setState({intervalId: id})
+  };
+
   updatePlayers = (gameId) => {
     fetch(`http://localhost:3000/games/${gameId}`)
       .then(resp => resp.json())
       .then(game => {
-        this.setState({players: game.players})
+        this.setState({
+          players: game.players,
+          teamARoster: [],
+          teamBRoster: [],
+        })
         this.splitPlayersIntoTeams(game.players)
+        // console.log("updating game and teams...")
       })
   };
 
@@ -99,7 +117,7 @@ class App extends Component {
 
 
   render(){
-    console.log(this.state.teamARoster, this.state.teamBRoster)
+    // console.log(this.state.teamARoster, this.state.teamBRoster)
 
     const {
       setToHome,
@@ -111,7 +129,8 @@ class App extends Component {
       addToPlayers,
       addTeamIds,
       updatePlayers,
-      splitPlayersIntoTeams
+      splitPlayersIntoTeams,
+      addIntervalId
     } = this
 
     return (
@@ -138,6 +157,7 @@ class App extends Component {
               teamBRoster={this.state.teamBRoster}
               updatePlayers={updatePlayers}
               splitPlayersIntoTeams={splitPlayersIntoTeams}
+              addIntervalId={addIntervalId}
             />
           }
         </div>
