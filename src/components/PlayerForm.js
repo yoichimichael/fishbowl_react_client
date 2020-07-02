@@ -30,12 +30,13 @@ class PlayerForm extends Component {
         join_code: this.state.joinCode
       }) 
     })
-    .then(resp => resp.json())
-    .then(playerObj => {
-      this.props.addPlayer(playerObj)
-      this.props.updatePlayers(playerObj.game_id)
-      this.props.changeContainerNum(3)
-    })
+      .then(resp => resp.json())
+      .then(playerObj => {
+        this.props.addPlayer(playerObj)
+        this.props.updatePlayers(playerObj.game_id)
+        // this.props.splitPlayersIntoTeams(this.props.players)
+        this.props.changeContainerNum(3)
+      })
     }
   }
 

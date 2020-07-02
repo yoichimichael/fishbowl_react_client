@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-class TeamColumnRow extends Component {
+class PlayerNameRow extends Component {
   state = {
 
   }
@@ -13,4 +13,4 @@ class TeamColumnRow extends Component {
   };
 };
 
-export default TeamColumnRow;
+export default PlayerNameRow;

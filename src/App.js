@@ -75,6 +75,7 @@ class App extends Component {
       .then(resp => resp.json())
       .then(game => {
         this.setState({players: game.players})
+        this.splitPlayersIntoTeams(game.players)
       })
   };
 
@@ -98,7 +99,7 @@ class App extends Component {
 
 
   render(){
-    console.log(this.state.game)
+    console.log(this.state.teamARoster, this.state.teamBRoster)
 
     const {
       setToHome,
@@ -133,7 +134,10 @@ class App extends Component {
               addTeamIds={addTeamIds}
               teamAId={this.state.teamAId}
               teamBId={this.state.teamBId}
+              teamARoster={this.state.teamARoster}
+              teamBRoster={this.state.teamBRoster}
               updatePlayers={updatePlayers}
+              splitPlayersIntoTeams={splitPlayersIntoTeams}
             />
           }
         </div>
