@@ -16,6 +16,7 @@ class App extends Component {
     teamAId: undefined,
     teamBId: undefined,
     player: undefined,
+    playerId: undefined,
     players: [],
     teamARoster: [],
     teamBRoster: [],
@@ -59,8 +60,13 @@ class App extends Component {
     this.setState({game: gameObj})
   };
 
+  // below also sets playerID state
   addPlayer = (playerObj) => {
-    this.setState({player: playerObj})
+    this.setState({player: playerObj, playerId: playerObj.id})
+  };
+
+  findPlayerById = (players, id) => {
+    return players.find(player => player.id === id)
   };
 
   addToPlayers = (playerObj) => {
@@ -88,6 +94,7 @@ class App extends Component {
       .then(resp => resp.json())
       .then(game => {
         this.setState({
+          player: this.findPlayerById(game.players, this.state.playerId),
           players: game.players,
           teamARoster: [],
           teamBRoster: [],

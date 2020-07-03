@@ -17,7 +17,8 @@
 
 .playerInfo {
   position: absolute;
-  margin-left: 200px
+  margin-top: 5px;
+  margin-left: 210px
 }
 
 .name {
