@@ -3,6 +3,7 @@ import SigninContainer from './SigninContainer'
 import styles from '../stylesheets/MainContainer.module.css'
 import TeamAssignForm from '../components/TeamAssignForm'
 import PlayerLobby from '../components/PlayerLobby'
+import CardFormContainer from './CardFormContainer'
 
 class MainContainer extends Component {
 
@@ -65,6 +66,8 @@ class MainContainer extends Component {
           teamARoster={teamARoster}
           teamBRoster={teamBRoster}
         />
+      case 4:
+        return <CardFormContainer/>
     }
   }
 }
