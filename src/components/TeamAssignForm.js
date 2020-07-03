@@ -75,22 +75,6 @@ class TeamAssignForm extends Component {
               teamAId={teamAId}
               teamBId={teamBId}
             />)}
-            {/* <tr>
-              <td style={{"text-decoration": "underline"}}>Dummy Player</td>
-              <td>
-                <input
-                  type="radio"
-                />
-              </td>
-              <td>
-                <input
-                  type="radio"
-                />
-              </td>
-            </tr> */}
-            {/* <PlayerRow/>
-            <PlayerRow/>
-            <PlayerRow/> */}
           </tbody>
         </table>
       </>

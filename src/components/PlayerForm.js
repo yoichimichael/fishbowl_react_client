@@ -20,28 +20,32 @@ class PlayerForm extends Component {
       this.setState({showCodeEntry: true})
     } else {
       fetch("http://localhost:3000/players", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json"
-      },
-      body: JSON.stringify({
-        name: this.state.name,
-        join_code: this.state.joinCode
-      }) 
-    })
-      .then(resp => resp.json())
-      .then(playerObj => {
-        this.props.addPlayer(playerObj)
-        const pullPlayersInterval = setInterval(
-          this.props.updatePlayers, 
-          2000, 
-          playerObj.game_id
-        )
-        this.props.addIntervalId(pullPlayersInterval)
-        // this.props.splitPlayersIntoTeams(this.props.players)
-        this.props.changeContainerNum(3)
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json"
+        },
+        body: JSON.stringify({
+          name: this.state.name,
+          join_code: this.state.joinCode,
+          //below values are such to pass rails strong params standards
+          player_id: 'empty',
+          team_a_id: 'empty',
+          team_b_id: 'empty'
+        }) 
       })
+        .then(resp => resp.json())
+        .then(playerObj => {
+          this.props.addPlayer(playerObj)
+          const pullPlayersInterval = setInterval(
+            this.props.updatePlayers, 
+            2000, 
+            playerObj.game_id
+          )
+          this.props.addIntervalId(pullPlayersInterval)
+          // this.props.splitPlayersIntoTeams(this.props.players)
+          this.props.changeContainerNum(3)
+        })
     }
   }
 

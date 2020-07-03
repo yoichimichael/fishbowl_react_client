@@ -8,6 +8,21 @@ class PlayerRow extends Component {
 
   handleChange = (e) => {
     this.setState({team_id: parseInt(e.target.value)})
+    fetch(`http://localhost:3000/players/${this.props.id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json"
+      },
+      body: JSON.stringify({
+        name: 'empty',
+        join_code: 'empty',
+        //above values are such to pass rails strong params standards
+        player_id: this.props.id,
+        team_a_id: this.props.teamAId,
+        team_b_id: this.props.teamBId
+      }) 
+    })
   };
 
   render(){
