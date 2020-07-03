@@ -120,6 +120,20 @@ class App extends Component {
     // console.log(this.state.teamARoster, this.state.teamBRoster)
 
     const {
+      showRules,
+      showForms,
+      containerNum,
+      game,
+      teamAId,
+      teamBId,
+      player,
+      players,
+      teamARoster,
+      teamBRoster,
+      intervalId
+    } = this.state
+
+    const {
       setToHome,
       showRulesToggle,
       showFormsToggle,
@@ -135,26 +149,29 @@ class App extends Component {
 
     return (
       <div className={styles.app}>
-        <NavBar setToHome={setToHome}/>
+        <NavBar 
+          setToHome={setToHome}
+          player={player}
+        />
         <div className={styles.mainDiv}>
           {this.state.showRules ? 
             <RulesView showRulesToggle={showRulesToggle}/> : 
             <MainContainer 
               showRulesToggle={showRulesToggle}
               showFormsToggle={showFormsToggle}
-              showForms={this.state.showForms}
-              containerNum={this.state.containerNum}
+              showForms={showForms}
+              containerNum={containerNum}
               changeContainerNum={changeContainerNum}
               addGame={addGame}
               addPlayer={addPlayer}
-              game={this.state.game}
-              players={this.state.players}
+              game={game}
+              players={players}
               addToPlayers={addToPlayers}
               addTeamIds={addTeamIds}
-              teamAId={this.state.teamAId}
-              teamBId={this.state.teamBId}
-              teamARoster={this.state.teamARoster}
-              teamBRoster={this.state.teamBRoster}
+              teamAId={teamAId}
+              teamBId={teamBId}
+              teamARoster={teamARoster}
+              teamBRoster={teamBRoster}
               updatePlayers={updatePlayers}
               splitPlayersIntoTeams={splitPlayersIntoTeams}
               addIntervalId={addIntervalId}

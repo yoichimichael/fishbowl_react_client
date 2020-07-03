@@ -14,6 +14,11 @@ class TeamAssignForm extends Component {
     })
   };
 
+  sortPlayersById = (players) => {
+    const newPlayers = [...players]
+    return newPlayers.sort((a, b) => a.id - b.id)
+  };
+
   render(){
 
     const {
@@ -69,7 +74,7 @@ class TeamAssignForm extends Component {
             </tr>
           </thead>
           <tbody>          
-            {players.map(player => <PlayerRow 
+            {this.sortPlayersById(players).map(player => <PlayerRow 
               key={player.id} 
               {...player}
               teamAId={teamAId}

@@ -14,3 +14,16 @@
   display: block;
   position: absolute;
 }
+
+.playerInfo {
+  position: absolute;
+  margin-left: 200px
+}
+
+.name {
+  margin: 0px
+}
+
+.team {
+  margin: 0px
+}
