@@ -19,6 +19,22 @@ class TeamAssignForm extends Component {
     return newPlayers.sort((a, b) => a.id - b.id)
   };
 
+  handleClick = () => {
+    fetch("http://localhost:3000/teams", {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json"
+      },
+      body: JSON.stringify({
+        team_a_id: this.props.teamAId,
+        team_b_id: this.props.teamBId,
+        team_a_name: this.state.teamAName,
+        team_b_name: this.state.teamBName
+      }) 
+    })
+  };
+
   render(){
 
     const {
@@ -38,7 +54,7 @@ class TeamAssignForm extends Component {
           className={styles.startGameButton}
           type="button"
           value="Create Game"
-          // onClick={this.handleClick}
+          onClick={this.handleClick}
         />
         <div className={styles.teamAInputDiv}>
           <label htmlFor="teamA">Team A Name:</label>
