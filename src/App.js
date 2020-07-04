@@ -146,6 +146,7 @@ class App extends Component {
       teamAId,
       teamBId,
       player,
+      playerId,
       players,
       teamARoster,
       teamBRoster
@@ -186,6 +187,7 @@ class App extends Component {
               addGame={addGame}
               addPlayer={addPlayer}
               game={game}
+              playerId={playerId}
               players={players}
               addToPlayers={addToPlayers}
               addTeamIds={addTeamIds}

@@ -40,6 +40,8 @@ class CardFormContainer extends Component {
           submissions: this.state.cards
         }) 
       })
+        .then(resp => resp.json())
+        .then(console.log)
     }
   };
 

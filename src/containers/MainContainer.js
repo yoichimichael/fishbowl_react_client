@@ -22,6 +22,7 @@ class MainContainer extends Component {
       addGame, 
       addPlayer,
       game,
+      playerId,
       players,
       addToPlayers,
       addTeamIds,
@@ -34,7 +35,7 @@ class MainContainer extends Component {
       addIntervalId
     } = this.props
 
-    console.log(teamARoster, teamBRoster)
+    // console.log(teamARoster, teamBRoster)
 
     switch(containerNum){
       case 1:
@@ -67,7 +68,10 @@ class MainContainer extends Component {
           teamBRoster={teamBRoster}
         />
       case 4:
-        return <CardFormContainer/>
+        return <CardFormContainer
+          playerId={playerId}
+          gameId={game.id}
+        />
     }
   }
 }
