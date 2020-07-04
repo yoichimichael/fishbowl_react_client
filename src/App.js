@@ -89,18 +89,30 @@ class App extends Component {
     this.setState({intervalId: id})
   };
 
+  switchToCardSubmissionView = () => {
+    if(this.state.game){      
+      const teamA = this.state.game.teams[0]
+      const teamB = this.state.game.teams[1]
+      // console.log(teamA.team_name, teamB.team_name)
+      if(teamA.team_name && teamB.team_name){
+        this.setState({containerNum: 4})
+      }
+    }
+  };
+
   updatePlayers = (gameId) => {
     fetch(`http://localhost:3000/games/${gameId}`)
       .then(resp => resp.json())
-      .then(game => {
+      .then(gameObj => {
         this.setState({
-          player: this.findPlayerById(game.players, this.state.playerId),
-          players: game.players,
+          game: gameObj,
+          player: this.findPlayerById(gameObj.players, this.state.playerId),
+          players: gameObj.players,
           teamARoster: [],
           teamBRoster: [],
         })
-        this.splitPlayersIntoTeams(game.players)
-        // console.log("updating game and teams...")
+        this.splitPlayersIntoTeams(gameObj.players)
+        this.switchToCardSubmissionView()
       })
   };
 
