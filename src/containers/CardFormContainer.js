@@ -6,7 +6,7 @@ class CardFormContainer extends Component {
   state = { 
     text: '',
     cards: [],
-    requiredNumOfCards: 5
+    requiredNumOfCards: 3
   }
 
   handleChange = (e) => {
