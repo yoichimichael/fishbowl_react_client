@@ -27,6 +27,19 @@ class CardFormContainer extends Component {
         return card !== e.target.name
       })
       this.setState({cards: newCards})
+    } else if (e.target.value === "Submit Cards to the Fishbowl"){
+      fetch("http://localhost:3000/submissions", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json"
+        },
+        body: JSON.stringify({
+          player_id: this.props.playerId,
+          game_id: this.props.gameId,
+          submissions: this.state.cards
+        }) 
+      })
     }
   };
 
@@ -57,6 +70,7 @@ class CardFormContainer extends Component {
           <input
             type="button"
             value="Submit Cards to the Fishbowl"
+            onClick={this.handleClick}
           />
         }
         <ul>

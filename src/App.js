@@ -11,7 +11,7 @@ class App extends Component {
   state = {
     showRules: false,
     showForms: false,
-    containerNum: 1,
+    containerNum: 4,
     game: undefined,
     teamAId: undefined,
     teamBId: undefined,
@@ -148,8 +148,7 @@ class App extends Component {
       player,
       players,
       teamARoster,
-      teamBRoster,
-      intervalId
+      teamBRoster
     } = this.state
 
     const {
@@ -173,8 +172,11 @@ class App extends Component {
           player={player}
         />
         <div className={styles.mainDiv}>
-          {this.state.showRules ? 
-            <RulesView showRulesToggle={showRulesToggle}/> : 
+          {showRules ? 
+            <RulesView 
+              showRulesToggle={showRulesToggle}
+            /> 
+            : 
             <MainContainer 
               showRulesToggle={showRulesToggle}
               showFormsToggle={showFormsToggle}
