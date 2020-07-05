@@ -32,7 +32,7 @@ class MainContainer extends Component {
       teamBId,
       teamARoster,
       teamBRoster,
-      updatePlayers,
+      updateGame,
       splitPlayersIntoTeams,
       addIntervalId
     } = this.props
@@ -52,7 +52,7 @@ class MainContainer extends Component {
           changeContainerNum={changeContainerNum}
           addToPlayers={addToPlayers}
           addTeamIds={addTeamIds}
-          updatePlayers={updatePlayers}
+          updateGame={updateGame}
           splitPlayersIntoTeams={splitPlayersIntoTeams}
           addIntervalId={addIntervalId}
         />

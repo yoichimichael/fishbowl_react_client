@@ -100,7 +100,7 @@ class App extends Component {
     }
   };
 
-  updatePlayers = (gameId) => {
+  updateGame = (gameId) => {
     fetch(`http://localhost:3000/games/${gameId}`)
       .then(resp => resp.json())
       .then(gameObj => {
@@ -161,7 +161,7 @@ class App extends Component {
       addPlayer,
       addToPlayers,
       addTeamIds,
-      updatePlayers,
+      updateGame,
       splitPlayersIntoTeams,
       addIntervalId
     } = this
@@ -196,7 +196,7 @@ class App extends Component {
               teamBId={teamBId}
               teamARoster={teamARoster}
               teamBRoster={teamBRoster}
-              updatePlayers={updatePlayers}
+              updateGame={updateGame}
               splitPlayersIntoTeams={splitPlayersIntoTeams}
               addIntervalId={addIntervalId}
             />

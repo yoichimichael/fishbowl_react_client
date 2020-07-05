@@ -28,7 +28,7 @@ class PlayerForm extends Component {
         body: JSON.stringify({
           name: this.state.name,
           join_code: this.state.joinCode,
-          //below values are such to pass rails strong params standards
+          //below values assigned to pass rails strong params standards
           player_id: 'empty',
           team_a_id: 'empty',
           team_b_id: 'empty'
@@ -38,12 +38,11 @@ class PlayerForm extends Component {
         .then(playerObj => {
           this.props.addPlayer(playerObj)
           const pullPlayersInterval = setInterval(
-            this.props.updatePlayers, 
+            this.props.updateGame, 
             2000, 
             playerObj.game_id
           )
           this.props.addIntervalId(pullPlayersInterval)
-          // this.props.splitPlayersIntoTeams(this.props.players)
           this.props.changeContainerNum(3)
         })
     }

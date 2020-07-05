@@ -20,7 +20,7 @@ class FormContainer extends Component {
       addToPlayers,
       changeContainerNum,
       addTeamIds,
-      updatePlayers,
+      updateGame,
       splitPlayersIntoTeams,
       addIntervalId
     } = this.props
@@ -35,12 +35,12 @@ class FormContainer extends Component {
             addToPlayers={addToPlayers}
             changeContainerNum={changeContainerNum}
             addTeamIds={addTeamIds}
-            updatePlayers={updatePlayers}
+            updateGame={updateGame}
             addIntervalId={addIntervalId}
           /> :
           <PlayerForm 
             changeContainerNum={changeContainerNum}
-            updatePlayers={updatePlayers}
+            updateGame={updateGame}
             addIntervalId={addIntervalId}
             addPlayer={addPlayer}
             players={players}

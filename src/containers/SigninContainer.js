@@ -29,7 +29,7 @@ class SigninContainer extends Component {
       addToPlayers,
       changeContainerNum,
       addTeamIds,
-      updatePlayers,
+      updateGame,
       splitPlayersIntoTeams,
       addIntervalId
     } = this.props
@@ -54,7 +54,7 @@ class SigninContainer extends Component {
             addToPlayers={addToPlayers}
             changeContainerNum={changeContainerNum}
             addTeamIds={addTeamIds}
-            updatePlayers={updatePlayers}
+            updateGame={updateGame}
             splitPlayersIntoTeams={splitPlayersIntoTeams}
             addIntervalId={addIntervalId}
           /> :
