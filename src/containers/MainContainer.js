@@ -4,6 +4,7 @@ import styles from '../stylesheets/MainContainer.module.css'
 import TeamAssignForm from '../components/TeamAssignForm'
 import PlayerLobby from '../components/PlayerLobby'
 import CardFormContainer from './CardFormContainer'
+import RoundLobbyView from '../components/RoundLobbyView'
 
 class MainContainer extends Component {
 
@@ -22,6 +23,7 @@ class MainContainer extends Component {
       addGame, 
       addPlayer,
       game,
+      player,
       playerId,
       players,
       addToPlayers,
@@ -72,6 +74,12 @@ class MainContainer extends Component {
           playerId={playerId}
           gameId={game.id}
           cardsPerPlayer={game.cards_per_player}
+        />
+      case 5:
+        return <RoundLobbyView 
+          game={game}
+          player={player}
+          playerId={playerId}
         />
     }
   }

@@ -11,7 +11,7 @@ class App extends Component {
   state = {
     showRules: false,
     showForms: false,
-    containerNum: 1,
+    containerNum: 5 ,
     game: undefined,
     teamAId: undefined,
     teamBId: undefined,
@@ -187,6 +187,7 @@ class App extends Component {
               addGame={addGame}
               addPlayer={addPlayer}
               game={game}
+              player={player}
               playerId={playerId}
               players={players}
               addToPlayers={addToPlayers}

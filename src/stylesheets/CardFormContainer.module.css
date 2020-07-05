@@ -5,3 +5,8 @@
 .button {
   margin-top: 20px
 }
+
+.waitingText {
+  position: absolute;
+  margin-top: 200px;
+}

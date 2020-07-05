@@ -5,7 +5,8 @@ import Card from '../components/Card.js'
 class CardFormContainer extends Component {
   state = { 
     text: '',
-    cards: []
+    cards: [],
+    showWaitingMessage: false
   }
 
   handleChange = (e) => {
@@ -39,52 +40,61 @@ class CardFormContainer extends Component {
           submissions: this.state.cards
         }) 
       })
-        .then(resp => resp.json())
-        .then(console.log)
+        // .then(resp => resp.json())
+        // .then(console.log)
+      this.setState(prevState => {
+        return {
+         showWaitingMessage: !prevState.showWaitingMessage
+        }
+      })
     }
   };
 
   render(){
-    return(
-      <>
-        {this.state.cards.length !== this.props.cardsPerPlayer ?
-          <>
-            <h2 className={styles.h3}>Enter Card Text:</h2>
-            <input 
-              className={styles.textInput}
-              name="text" 
-              type="text" 
-              value={this.state.text}
-              onChange={this.handleChange}
-            />
-            <br/>
+    if(!this.state.showWaitingMessage){
+      return(
+        <>
+          {this.state.cards.length !== this.props.cardsPerPlayer ?
+            <>
+              <h2 className={styles.h3}>Enter Card Text:</h2>
+              <input 
+                className={styles.textInput}
+                name="text" 
+                type="text" 
+                value={this.state.text}
+                onChange={this.handleChange}
+              />
+              <br/>
+              <input
+                className={styles.button}
+                type="button"
+                value="Create Card"
+                onClick={this.handleClick}
+              />
+              <h3>Cards Left to Write:</h3>
+              <h2>{this.props.cardsPerPlayer - this.state.cards.length}</h2>
+            </> 
+            :
             <input
-              className={styles.button}
               type="button"
-              value="Create Card"
+              value="Submit Cards to the Fishbowl"
               onClick={this.handleClick}
             />
-            <h3>Cards Left to Write:</h3>
-            <h2>{this.props.cardsPerPlayer - this.state.cards.length}</h2>
-          </> 
-          :
-          <input
-            type="button"
-            value="Submit Cards to the Fishbowl"
-            onClick={this.handleClick}
-          />
-        }
-        <ul>
-          {this.state.cards.map(card => {
-            return <Card 
-              key={this.state.cards.indexOf(card)}
-              text={card}
-              handleClick={this.handleClick}
-            />
-          })}
-        </ul>
-      </>
-    )    
+          }
+          <ul>
+            {this.state.cards.map(card => {
+              return <Card 
+                key={this.state.cards.indexOf(card)}
+                text={card}
+                handleClick={this.handleClick}
+              />
+            })}
+          </ul>
+        </>
+      )    
+    } else {
+      return <h3 className={styles.waitingText}>Waiting for other players to add their cards to the fishbowl...</h3>
+    }
   }
 };
 
