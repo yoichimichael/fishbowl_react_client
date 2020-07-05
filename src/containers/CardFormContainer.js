@@ -5,8 +5,7 @@ import Card from '../components/Card.js'
 class CardFormContainer extends Component {
   state = { 
     text: '',
-    cards: [],
-    requiredNumOfCards: 3
+    cards: []
   }
 
   handleChange = (e) => {
@@ -48,7 +47,7 @@ class CardFormContainer extends Component {
   render(){
     return(
       <>
-        {this.state.cards.length !== this.state.requiredNumOfCards ?
+        {this.state.cards.length !== this.props.cardsPerPlayer ?
           <>
             <h2 className={styles.h3}>Enter Card Text:</h2>
             <input 
@@ -66,7 +65,7 @@ class CardFormContainer extends Component {
               onClick={this.handleClick}
             />
             <h3>Cards Left to Write:</h3>
-            <h2>{this.state.requiredNumOfCards - this.state.cards.length}</h2>
+            <h2>{this.props.cardsPerPlayer - this.state.cards.length}</h2>
           </> 
           :
           <input

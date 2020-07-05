@@ -71,6 +71,7 @@ class MainContainer extends Component {
         return <CardFormContainer
           playerId={playerId}
           gameId={game.id}
+          cardsPerPlayer={game.cards_per_player}
         />
     }
   }
