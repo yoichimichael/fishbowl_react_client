@@ -34,7 +34,8 @@ class MainContainer extends Component {
       teamBRoster,
       updateGame,
       splitPlayersIntoTeams,
-      addIntervalId
+      addIntervalId,
+      findPlayerById
     } = this.props
 
     // console.log(teamARoster, teamBRoster)
@@ -80,6 +81,7 @@ class MainContainer extends Component {
           game={game}
           player={player}
           playerId={playerId}
+          findPlayerById={findPlayerById}
         />
     }
   }

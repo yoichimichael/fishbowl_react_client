@@ -11,7 +11,7 @@ class App extends Component {
   state = {
     showRules: false,
     showForms: false,
-    containerNum: 5 ,
+    containerNum: 1,
     game: undefined,
     teamAId: undefined,
     teamBId: undefined,
@@ -113,6 +113,9 @@ class App extends Component {
         })
         this.splitPlayersIntoTeams(gameObj.players)
         this.switchToCardSubmissionView()
+        if(gameObj.rounds.length > 0){
+          this.setState({containerNum: 5})
+        }
       })
   };
 
@@ -163,7 +166,8 @@ class App extends Component {
       addTeamIds,
       updateGame,
       splitPlayersIntoTeams,
-      addIntervalId
+      addIntervalId,
+      findPlayerById
     } = this
 
     return (
@@ -199,6 +203,7 @@ class App extends Component {
               updateGame={updateGame}
               splitPlayersIntoTeams={splitPlayersIntoTeams}
               addIntervalId={addIntervalId}
+              findPlayerById={findPlayerById}
             />
           }
         </div>

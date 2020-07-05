@@ -10,7 +10,8 @@ class RoundLobbyView extends Component {
     const {
       game,
       player,
-      playerId
+      playerId,
+      findPlayerById
     } = this.props
 
     return(
@@ -18,9 +19,9 @@ class RoundLobbyView extends Component {
         {/* change below to game.rounds[-1].name */}
         <h1 className={styles.h1}>Round 1: Taboo</h1>
         <p>{tabooRules}</p>
-        { false ?
+        { game.rounds[0].player_id === playerId ?
           <>
-            <h2>You're up, Player!</h2>
+            <h2>You're up, {player.name}</h2>
             <input
               type="button"
               value="Go!"
@@ -28,7 +29,7 @@ class RoundLobbyView extends Component {
             />
           </>
           :
-          <h3 className={styles.h3}>Waiting for Player...</h3>
+          <h3 className={styles.h3}>Waiting for {findPlayerById(game.players, game.rounds[0].player_id).name}...</h3>
         }
 
       </>
