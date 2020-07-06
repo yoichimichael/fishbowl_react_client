@@ -9,7 +9,9 @@ class TurnLobbyView extends Component {
   // starts a turn by round.in_play === true
   handleClick = () => {
     // change later to last round in array?
-    fetch(`http://localhost:3000/rounds/${this.props.game.rounds[0].id}/start`, {
+    const game = this.props.game
+    const currentRound = game.rounds[game.rounds.length - 1]
+    fetch(`http://localhost:3000/rounds/${currentRound.id}/start`, {
       method: "PATCH"
     })
   };

@@ -5,7 +5,6 @@ import TurnEndView from '../components/TurnEndView.js'
 
 class TurnContainer extends Component {
   state = {
-    turnSection: this.props.turnSection
   }
 
   render(){
@@ -16,10 +15,11 @@ class TurnContainer extends Component {
       player,
       playerId,
       players,
-      findPlayerById
+      findPlayerById,
+      turnSection
     } = this.props
 
-    switch(this.state.turnSection){
+    switch(turnSection){
       case 1: 
         return <TurnLobbyView
           game={game}

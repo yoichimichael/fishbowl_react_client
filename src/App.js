@@ -92,6 +92,7 @@ class App extends Component {
   };
   
   startTurn = () => {
+    console.log("starting turn")
     this.setState({turnSection: 2})
   };
 
@@ -100,10 +101,11 @@ class App extends Component {
   };
 
   switchToCardSubmissionView = () => {
-    if(this.state.game){      
+    if(this.state.game && this.state.game.submissions.length === 0){      
       const teamA = this.state.game.teams[0]
       const teamB = this.state.game.teams[1]
-      // console.log(teamA.team_name, teamB.team_name)
+
+      // shows CardFormContainer
       if(teamA.team_name && teamB.team_name){
         this.setState({containerNum: 4})
       }
@@ -125,17 +127,19 @@ class App extends Component {
         this.splitPlayersIntoTeams(gameObj.players)
         this.switchToCardSubmissionView()
 
-        const currentRound = gameObj.rounds[gameObj.rounds.length - 1] 
+        if(gameObj.rounds.length > 0){
+          const currentRound = gameObj.rounds[gameObj.rounds.length - 1] 
 
-        switch(currentRound.turn_part){
-          case "lobby":
-            this.setState({containerNum: 5});
-            break;
-          case "play":
-            this.startTurn();
-            break;
-          case "end":
-            this.endTurn();
+          switch(currentRound.turn_part){
+            case "lobby":
+              this.setState({containerNum: 5});
+              break;
+            case "play":
+              this.startTurn();
+              break;
+            case "end":
+              this.endTurn();
+          }
         }
       })
   };
