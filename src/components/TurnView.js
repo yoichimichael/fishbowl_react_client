@@ -3,6 +3,7 @@ import styles from '../stylesheets/TurnView.module.css'
 
 class TurnView extends Component {
   state = {
+    // adjust for playerId
     showPerformerView: true,
     points: 0
   }
