@@ -11,7 +11,7 @@ class App extends Component {
   state = {
     showRules: false,
     showForms: false,
-    containerNum: 1,
+    containerNum: 6,
     game: undefined,
     teamAId: undefined,
     teamBId: undefined,

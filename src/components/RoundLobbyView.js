@@ -6,6 +6,10 @@ class RoundLobbyView extends Component {
 
   }
 
+  handleClick = () => {
+    // start gameplay
+  };
+
   render(){
     const {
       game,
@@ -16,7 +20,6 @@ class RoundLobbyView extends Component {
 
     return(
       <>
-        {/* change below to game.rounds[-1].name */}
         <h1 className={styles.h1}>Round 1: Taboo</h1>
         <p>{tabooRules}</p>
         { game.rounds[0].player_id === playerId ?

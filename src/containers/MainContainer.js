@@ -5,6 +5,7 @@ import TeamAssignForm from '../components/TeamAssignForm'
 import PlayerLobby from '../components/PlayerLobby'
 import CardFormContainer from './CardFormContainer'
 import RoundLobbyView from '../components/RoundLobbyView'
+import TurnView from '../components/TurnView'
 
 class MainContainer extends Component {
 
@@ -83,6 +84,8 @@ class MainContainer extends Component {
           playerId={playerId}
           findPlayerById={findPlayerById}
         />
+      case 6:
+        return <TurnView />
     }
   }
 }
