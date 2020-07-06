@@ -5,7 +5,7 @@ class TurnView extends Component {
 
   state = {
     // adjust for playerId
-    showPerformerView: true,
+    // showPerformerView: true,
     points: 0,
     // cards: []
   }
@@ -22,9 +22,9 @@ class TurnView extends Component {
 
   render(){
 
-    const {
-      showPerformerView
-    } = this.state
+    // const {
+    //   showPerformerView
+    // } = this.state
 
     const {
       clock,
@@ -35,16 +35,18 @@ class TurnView extends Component {
       findPlayerById
     } = this.props
 
+    const currentRound = game.rounds[game.rounds.length - 1]
+
     return(
       <>
-        {showPerformerView ?
+        {currentRound.player_id === playerId ?
           <h2 className={styles.youreUp}>{player.name}, you're up!</h2>
           :
           null
         }
         <h3 className={styles.h3}>Time Left:</h3>
         <h1>{clock} s</h1>
-        {showPerformerView ? 
+        {currentRound.player_id === playerId ? 
           <>
             <div className={styles.card}>
               <h3 className={styles.cardText}>Santa's Workshop</h3>
@@ -64,8 +66,8 @@ class TurnView extends Component {
             <h2>Team {
               findPlayerById(
                 players,
-                game.rounds[game.rounds.length - 1].player_id
-              ).team.team_letter
+                currentRound.player_id
+              ).team.team_letter.toUpperCase()
             } is up!</h2>
             <br/>
             <h3>Current Performer:</h3>
@@ -73,7 +75,7 @@ class TurnView extends Component {
             <h2>{
               findPlayerById(
                 players,
-                game.rounds[game.rounds.length - 1].player_id
+                currentRound.player_id
               ).name
             }</h2>
           </>
