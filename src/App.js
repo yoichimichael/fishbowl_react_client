@@ -11,7 +11,7 @@ class App extends Component {
   state = {
     showRules: false,
     showForms: false,
-    containerNum: 6,
+    containerNum: 1,
     game: undefined,
     teamAId: undefined,
     teamBId: undefined,
@@ -88,6 +88,10 @@ class App extends Component {
   addIntervalId = (id) => {
     this.setState({intervalId: id})
   };
+  
+  startTurn = () => {
+    this.setState({containerNum: 6})
+  }
 
   switchToCardSubmissionView = () => {
     if(this.state.game){      
@@ -115,6 +119,9 @@ class App extends Component {
         this.switchToCardSubmissionView()
         if(gameObj.rounds.length > 0){
           this.setState({containerNum: 5})
+        }
+        if(gameObj.rounds.length > 0 && gameObj.rounds[gameObj.rounds.length - 1].in_play){
+          this.startTurn()
         }
       })
   };

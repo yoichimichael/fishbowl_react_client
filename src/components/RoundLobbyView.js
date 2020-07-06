@@ -6,8 +6,12 @@ class RoundLobbyView extends Component {
 
   }
 
+  // starts a turn by round.in_play === true
   handleClick = () => {
-    // start gameplay
+    // change later to last round in array?
+    fetch(`http://localhost:3000/rounds/${this.props.game.rounds[0].id}`, {
+      method: "PATCH"
+    })
   };
 
   render(){
@@ -22,6 +26,7 @@ class RoundLobbyView extends Component {
       <>
         <h1 className={styles.h1}>Round 1: Taboo</h1>
         <p>{tabooRules}</p>
+        {/* last element in array == game.rounds[game.rounds.length -1] */}
         { game.rounds[0].player_id === playerId ?
           <>
             <h2>You're up, {player.name}</h2>
