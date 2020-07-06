@@ -2,11 +2,23 @@ import React, { Component } from 'react'
 import styles from '../stylesheets/TurnView.module.css'
 
 class TurnView extends Component {
+
   state = {
     // adjust for playerId
     showPerformerView: true,
-    points: 0
+    points: 0,
+    // cards: []
   }
+
+  handleClick = (e) => {
+    if(e.target.value === "Got it!"){
+      this.setState(prevState => {
+        return {
+          points: prevState.points + 1
+        }
+      })
+    }
+  };
 
   render(){
 

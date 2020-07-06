@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import SigninContainer from './SigninContainer'
-import styles from '../stylesheets/MainContainer.module.css'
+// import styles from '../stylesheets/MainContainer.module.css'
 import TeamAssignForm from '../components/TeamAssignForm'
 import PlayerLobby from '../components/PlayerLobby'
 import CardFormContainer from './CardFormContainer'
-import TurnLobbyView from '../components/TurnLobbyView'
-import TurnView from '../components/TurnView'
+// import TurnLobbyView from '../components/TurnLobbyView'
+// import TurnView from '../components/TurnView'
 import TurnContainer from './TurnContainer'
 
 class MainContainer extends Component {
@@ -90,10 +90,10 @@ class MainContainer extends Component {
           players={players}
           findPlayerById={findPlayerById}
         />
-      case 6:
-        return <TurnView 
-          clock={clock}
-        />
+      // case 6:
+      //   return <TurnView 
+      //     clock={clock}
+      //   />
     }
   }
 }

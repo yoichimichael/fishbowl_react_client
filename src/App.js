@@ -93,8 +93,11 @@ class App extends Component {
   
   startTurn = () => {
     this.setState({turnSection: 2})
+  };
 
-  }
+  endTurn = () => {
+    this.setState({turnSection: 3})
+  };
 
   switchToCardSubmissionView = () => {
     if(this.state.game){      
@@ -107,6 +110,7 @@ class App extends Component {
     }
   };
 
+  // controls game flow
   updateGame = (gameId) => {
     fetch(`http://localhost:3000/games/${gameId}`)
       .then(resp => resp.json())
@@ -126,10 +130,14 @@ class App extends Component {
         if(
           gameObj.rounds.length > 0 
           && 
-          gameObj.rounds[gameObj.rounds.length - 1].in_play
-        ){
-          this.startTurn()
-        }
+          gameObj.rounds[gameObj.rounds.length - 1].turn_part === "play"
+        ){this.startTurn()}
+        if(
+          gameObj.rounds.length > 0 
+          && 
+          gameObj.rounds[gameObj.rounds.length - 1].turn_part === "end"
+        ){this.endTurn()}
+
       })
   };
 
