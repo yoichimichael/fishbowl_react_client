@@ -124,20 +124,19 @@ class App extends Component {
         })
         this.splitPlayersIntoTeams(gameObj.players)
         this.switchToCardSubmissionView()
-        if(gameObj.rounds.length > 0){
-          this.setState({containerNum: 5})
-        }
-        if(
-          gameObj.rounds.length > 0 
-          && 
-          gameObj.rounds[gameObj.rounds.length - 1].turn_part === "play"
-        ){this.startTurn()}
-        if(
-          gameObj.rounds.length > 0 
-          && 
-          gameObj.rounds[gameObj.rounds.length - 1].turn_part === "end"
-        ){this.endTurn()}
 
+        const currentRound = gameObj.rounds[gameObj.rounds.length - 1] 
+
+        switch(currentRound.turn_part){
+          case "lobby":
+            this.setState({containerNum: 5});
+            break;
+          case "play":
+            this.startTurn();
+            break;
+          case "end":
+            this.endTurn();
+        }
       })
   };
 
