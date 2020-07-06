@@ -47,7 +47,7 @@ class HostForm extends Component {
         this.props.changeContainerNum(2)
         const pullPlayersInterval = setInterval(
           this.props.updateGame, 
-          2000, 
+          1000, 
           gameObj.id
         )
         this.props.addIntervalId(pullPlayersInterval)

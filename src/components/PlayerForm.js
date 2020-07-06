@@ -39,7 +39,7 @@ class PlayerForm extends Component {
           this.props.addPlayer(playerObj)
           const pullPlayersInterval = setInterval(
             this.props.updateGame, 
-            2000, 
+            1000, 
             playerObj.game_id
           )
           this.props.addIntervalId(pullPlayersInterval)

@@ -3,15 +3,34 @@ import styles from '../stylesheets/TurnLobbyView.module.css'
 
 class TurnLobbyView extends Component {
   state = {
-
+    countDownInterval: null
   }
 
   // starts a turn by round.in_play === true
   handleClick = () => {
-    // change later to last round in array?
     const game = this.props.game
     const currentRound = game.rounds[game.rounds.length - 1]
+
     fetch(`http://localhost:3000/rounds/${currentRound.id}/start`, {
+      method: "PATCH"
+    })
+
+    const countDown = setInterval(this.updateClock, 1000)
+    this.setState({countDownInterval: countDown})
+    const clock = setTimeout(this.endTurn, 5000);
+
+  };
+
+  endTurn = () => {
+    clearInterval(this.state.countDownInterval);
+    alert("Turn Over!")
+  };
+
+  updateClock = () => {
+    const game = this.props.game
+    const currentRound = game.rounds[game.rounds.length - 1]
+
+    fetch(`http://localhost:3000/rounds/${currentRound.id}/countdown`, {
       method: "PATCH"
     })
   };

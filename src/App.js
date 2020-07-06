@@ -13,7 +13,7 @@ class App extends Component {
     showForms: false,
     containerNum: 1,
     turnSection: 1,
-    clock: 10,
+    clock: null,
     game: undefined,
     teamAId: undefined,
     teamBId: undefined,
@@ -92,8 +92,19 @@ class App extends Component {
   };
   
   startTurn = () => {
-    console.log("starting turn")
+    // console.log("starting turn")
+    const game = this.state.game
+    const currentRound = game.rounds[game.rounds.length - 1]
+    const playerId = this.state.playerId
+
     this.setState({turnSection: 2})
+    // if(currentRound.player_id === playerId){
+    //   const clock = setTimeout(function(){ alert("Hello"); }, 2000);
+    // }
+  };
+
+  setClock = (newTime) => {
+    this.setState({clock: newTime})
   };
 
   endTurn = () => {
@@ -117,6 +128,8 @@ class App extends Component {
     fetch(`http://localhost:3000/games/${gameId}`)
       .then(resp => resp.json())
       .then(gameObj => {
+        const currentRound = gameObj.rounds[gameObj.rounds.length - 1] 
+
         this.setState({
           game: gameObj,
           player: this.findPlayerById(gameObj.players, this.state.playerId),
@@ -128,8 +141,8 @@ class App extends Component {
         this.switchToCardSubmissionView()
 
         if(gameObj.rounds.length > 0){
-          const currentRound = gameObj.rounds[gameObj.rounds.length - 1] 
-
+          this.setClock(currentRound.clock)
+          
           switch(currentRound.turn_part){
             case "lobby":
               this.setState({containerNum: 5});

@@ -22,10 +22,6 @@ class TurnView extends Component {
 
   render(){
 
-    // const {
-    //   showPerformerView
-    // } = this.state
-
     const {
       clock,
       game,
