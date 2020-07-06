@@ -22,6 +22,12 @@ class RoundLobbyView extends Component {
       findPlayerById
     } = this.props
 
+    const tabooRules = "You may use any words to describe what’s on the card EXCEPT the words written on the card."
+
+    const charadesRules = "Classic charades rules: no words, no sounds, just movements."
+
+    const oneWordRules = "Think of ONE word that best evokes what’s written on the card. No sounds, no movements, ONE word only!"
+
     return(
       <>
         <h1 className={styles.h1}>Round 1: Taboo</h1>
@@ -46,9 +52,3 @@ class RoundLobbyView extends Component {
 }
 
 export default RoundLobbyView;
-
-const tabooRules = "You may use any words to describe what’s on the card EXCEPT the words written on the card."
-
-const charadesRules = "Classic charades rules: no words, no sounds, just movements."
-
-const oneWordRules = "Think of ONE word that best evokes what’s written on the card. No sounds, no movements, ONE word only!"

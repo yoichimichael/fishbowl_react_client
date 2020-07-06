@@ -12,6 +12,7 @@ class App extends Component {
     showRules: false,
     showForms: false,
     containerNum: 1,
+    clock: 10,
     game: undefined,
     teamAId: undefined,
     teamBId: undefined,
@@ -91,6 +92,7 @@ class App extends Component {
   
   startTurn = () => {
     this.setState({containerNum: 6})
+
   }
 
   switchToCardSubmissionView = () => {
@@ -120,7 +122,11 @@ class App extends Component {
         if(gameObj.rounds.length > 0){
           this.setState({containerNum: 5})
         }
-        if(gameObj.rounds.length > 0 && gameObj.rounds[gameObj.rounds.length - 1].in_play){
+        if(
+          gameObj.rounds.length > 0 
+          && 
+          gameObj.rounds[gameObj.rounds.length - 1].in_play
+        ){
           this.startTurn()
         }
       })
@@ -152,6 +158,7 @@ class App extends Component {
       showRules,
       showForms,
       containerNum,
+      clock,
       game,
       teamAId,
       teamBId,
@@ -197,6 +204,7 @@ class App extends Component {
               changeContainerNum={changeContainerNum}
               addGame={addGame}
               addPlayer={addPlayer}
+              clock={clock}
               game={game}
               player={player}
               playerId={playerId}

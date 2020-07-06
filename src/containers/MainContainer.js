@@ -23,6 +23,7 @@ class MainContainer extends Component {
       changeContainerNum,
       addGame, 
       addPlayer,
+      clock,
       game,
       player,
       playerId,
@@ -85,7 +86,9 @@ class MainContainer extends Component {
           findPlayerById={findPlayerById}
         />
       case 6:
-        return <TurnView />
+        return <TurnView 
+          clock={clock}
+        />
     }
   }
 }

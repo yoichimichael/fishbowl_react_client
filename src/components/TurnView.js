@@ -11,7 +11,8 @@ class TurnView extends Component {
   render(){
 
     const {
-      showPerformerView
+      showPerformerView,
+      clock
     } = this.state
     return(
       <>
@@ -21,7 +22,7 @@ class TurnView extends Component {
           null
         }
         <h3 className={styles.h3}>Time Left:</h3>
-        <h1>:47</h1>
+        <h1>{clock} s</h1>
         {showPerformerView ? 
           <>
             <div className={styles.card}>
