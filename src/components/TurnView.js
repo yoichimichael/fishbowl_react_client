@@ -11,13 +11,22 @@ class TurnView extends Component {
   render(){
 
     const {
-      showPerformerView,
-      clock
+      showPerformerView
     } = this.state
+
+    const {
+      clock,
+      game,
+      player,
+      playerId,
+      players,
+      findPlayerById
+    } = this.props
+
     return(
       <>
         {showPerformerView ?
-          <h2 className={styles.youreUp}>Performer, you're up!</h2>
+          <h2 className={styles.youreUp}>{player.name}, you're up!</h2>
           :
           null
         }
@@ -40,11 +49,21 @@ class TurnView extends Component {
           </>
           :
           <>
-            <h2>Team __ is up!</h2>
+            <h2>Team {
+              findPlayerById(
+                players,
+                game.rounds[game.rounds.length - 1].player_id
+              ).team.team_letter
+            } is up!</h2>
             <br/>
             <h3>Current Performer:</h3>
             <br/>
-            <h2>Performer Name</h2>
+            <h2>{
+              findPlayerById(
+                players,
+                game.rounds[game.rounds.length - 1].player_id
+              ).name
+            }</h2>
           </>
         }
       </>

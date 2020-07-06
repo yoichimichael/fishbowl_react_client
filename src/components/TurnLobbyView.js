@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import styles from '../stylesheets/RoundLobbyView.module.css'
+import styles from '../stylesheets/TurnLobbyView.module.css'
 
-class RoundLobbyView extends Component {
+class TurnLobbyView extends Component {
   state = {
 
   }
@@ -51,4 +51,4 @@ class RoundLobbyView extends Component {
   }
 }
 
-export default RoundLobbyView;
+export default TurnLobbyView;

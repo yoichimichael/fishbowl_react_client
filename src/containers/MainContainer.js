@@ -4,8 +4,9 @@ import styles from '../stylesheets/MainContainer.module.css'
 import TeamAssignForm from '../components/TeamAssignForm'
 import PlayerLobby from '../components/PlayerLobby'
 import CardFormContainer from './CardFormContainer'
-import RoundLobbyView from '../components/RoundLobbyView'
+import TurnLobbyView from '../components/TurnLobbyView'
 import TurnView from '../components/TurnView'
+import TurnContainer from './TurnContainer'
 
 class MainContainer extends Component {
 
@@ -20,6 +21,7 @@ class MainContainer extends Component {
       showForms, 
       showFormsToggle,
       containerNum,
+      turnSection,
       changeContainerNum,
       addGame, 
       addPlayer,
@@ -79,10 +81,13 @@ class MainContainer extends Component {
           cardsPerPlayer={game.cards_per_player}
         />
       case 5:
-        return <RoundLobbyView 
+        return <TurnContainer
+          turnSection={turnSection} 
+          clock={clock}
           game={game}
           player={player}
           playerId={playerId}
+          players={players}
           findPlayerById={findPlayerById}
         />
       case 6:

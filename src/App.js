@@ -12,6 +12,7 @@ class App extends Component {
     showRules: false,
     showForms: false,
     containerNum: 1,
+    turnSection: 1,
     clock: 10,
     game: undefined,
     teamAId: undefined,
@@ -61,7 +62,7 @@ class App extends Component {
     this.setState({game: gameObj})
   };
 
-  // below also sets playerID state
+  // sets player AND playerID states
   addPlayer = (playerObj) => {
     this.setState({player: playerObj, playerId: playerObj.id})
   };
@@ -91,7 +92,7 @@ class App extends Component {
   };
   
   startTurn = () => {
-    this.setState({containerNum: 6})
+    this.setState({turnSection: 2})
 
   }
 
@@ -158,6 +159,7 @@ class App extends Component {
       showRules,
       showForms,
       containerNum,
+      turnSection,
       clock,
       game,
       teamAId,
@@ -201,6 +203,7 @@ class App extends Component {
               showFormsToggle={showFormsToggle}
               showForms={showForms}
               containerNum={containerNum}
+              turnSection={turnSection}
               changeContainerNum={changeContainerNum}
               addGame={addGame}
               addPlayer={addPlayer}
