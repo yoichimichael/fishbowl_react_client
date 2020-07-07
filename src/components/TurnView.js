@@ -13,7 +13,7 @@ class TurnView extends Component {
   }
 
   handleClick = (e) => {
-    if(e.target.value === "Got it!" && this.props.deck.length > 1){
+    if(e.target.value === "Got it!" && this.props.deck.length > 0){
       this.props.score()
     } else if (e.target.value === "Pass"){
       this.props.pass()
@@ -28,6 +28,7 @@ class TurnView extends Component {
       deck,
       deckIndex,
       passCount,
+      gotLastCard,
       player,
       playerId,
       players,
@@ -53,19 +54,23 @@ class TurnView extends Component {
         <h3 className={styles.h3}>Time Left:</h3>
         <h1>{clock} s</h1>
         {currentRound.player_id === playerId ? 
-          <>
-            <div className={styles.card}>
-              <h3 className={styles.cardText}>
-                {deck[deckIndex].content}
-              </h3>
-            </div>
+          <>{ !gotLastCard ?
+              <div className={styles.card}>
+                <h3 className={styles.cardText}>
+                  {deck[deckIndex].content}
+                </h3>
+              </div>
+              :
+              null
+            }
             <input
               type = "button"
               value = "Got it!"
               onClick={this.handleClick}
             />
             <br/>
-            {passCount < 2 ?
+            {/* change back to 2 later */}
+            {passCount < 50 ?
               <input
                 type = "button"
                 value = "Pass"
