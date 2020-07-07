@@ -113,6 +113,8 @@ class App extends Component {
     this.setState({clockIntervalId: id})
   };
 
+  // called by a timeOut in startTurn() method by
+  // performer by pressing 'Go!'
   endTurn = () => {
     const game = this.state.game
     const currentRound = game.rounds[game.rounds.length - 1]

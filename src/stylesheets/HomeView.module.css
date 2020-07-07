@@ -15,3 +15,18 @@
   left: 50%;
   margin-left: -26px;
 }
+ 
+/* below is testion for position of card flashing */
+/* .card {
+  margin-left: 60px;
+  margin-Top: -200px;
+  position: absolute;
+  border: solid;
+  border-width: 1px;
+  border-color: black;
+  border-radius: 12px;
+  height: 100px;
+  width: 200px;
+  background-color: white;  
+  z-index: 1;
+} */

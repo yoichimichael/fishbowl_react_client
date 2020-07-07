@@ -33,6 +33,10 @@ class HomeView extends Component {
           type="button"
           value="Join Game"
         />
+        {/* test for card position for flash on screen */}
+        {/* <div className={styles.card}>
+          <h1>Testing Out Cards</h1>
+        </div> */}
         <input
             className={styles.rulesButton} 
             type="button" 
