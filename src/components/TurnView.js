@@ -38,7 +38,12 @@ class TurnView extends Component {
         {currentRound.player_id === playerId ?
           <h2 className={styles.youreUp}>{player.name}, you're up!</h2>
           :
-          null
+          <h2 className={styles.isUp}>Team {
+            findPlayerById(
+              players,
+              currentRound.player_id
+            ).team.team_letter.toUpperCase()
+          } is up!</h2>
         }
         <h3 className={styles.h3}>Time Left:</h3>
         <h1>{clock} s</h1>
@@ -59,12 +64,6 @@ class TurnView extends Component {
           </>
           :
           <>
-            <h2>Team {
-              findPlayerById(
-                players,
-                currentRound.player_id
-              ).team.team_letter.toUpperCase()
-            } is up!</h2>
             <br/>
             <h3>Current Performer:</h3>
             <br/>

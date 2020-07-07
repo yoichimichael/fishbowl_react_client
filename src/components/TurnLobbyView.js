@@ -6,8 +6,9 @@ class TurnLobbyView extends Component {
     countDownInterval: null
   }
 
-  // starts a turn by round.in_play === true
-  handleClick = () => {
+  // starts a turn by round.turn_part === 'play'
+  // only accessible by 'performer'
+  startTurn = () => {
     const game = this.props.game
     const currentRound = game.rounds[game.rounds.length - 1]
 
@@ -15,21 +16,23 @@ class TurnLobbyView extends Component {
       method: "PATCH"
     })
 
-    const countDown = setInterval(this.updateClock, 1000)
-    this.setState({countDownInterval: countDown})
-    const clock = setTimeout(this.endTurn, 5000);
+    const countDownIntervalId = setInterval(this.updateClock, 1000)
+    this.props.setClockIntervalId(countDownIntervalId)
+    const clock = setTimeout(this.props.endTurn, 5000);
 
   };
 
-  endTurn = () => {
-    clearInterval(this.state.countDownInterval);
-    alert("Turn Over!")
-  };
+  // endTurn = () => {
+  //   clearInterval(this.state.countDownInterval);
+  //   alert("Turn Over!")
+  // };
 
+  // At 1sec intervals sends PATCH requests to server 
   updateClock = () => {
     const game = this.props.game
     const currentRound = game.rounds[game.rounds.length - 1]
 
+    // non-crud routing to decrement round.clock
     fetch(`http://localhost:3000/rounds/${currentRound.id}/countdown`, {
       method: "PATCH"
     })
@@ -59,7 +62,7 @@ class TurnLobbyView extends Component {
             <input
               type="button"
               value="Go!"
-              onClick={this.handleClick}
+              onClick={this.startTurn}
             />
           </>
           :

@@ -12,6 +12,8 @@ class TurnContainer extends Component {
     const {
       clock,
       game,
+      setClockIntervalId,
+      endTurn,
       player,
       playerId,
       players,
@@ -26,6 +28,8 @@ class TurnContainer extends Component {
           player={player}
           playerId={playerId}
           findPlayerById={findPlayerById}
+          setClockIntervalId={setClockIntervalId}
+          endTurn={endTurn}
         />
       case 2:
         return <TurnView

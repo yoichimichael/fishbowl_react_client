@@ -27,6 +27,8 @@ class MainContainer extends Component {
       addPlayer,
       clock,
       game,
+      setClockIntervalId,
+      endTurn,
       player,
       playerId,
       players,
@@ -85,6 +87,8 @@ class MainContainer extends Component {
           turnSection={turnSection} 
           clock={clock}
           game={game}
+          setClockIntervalId={setClockIntervalId}
+          endTurn={endTurn}
           player={player}
           playerId={playerId}
           players={players}

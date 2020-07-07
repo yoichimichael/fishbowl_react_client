@@ -14,6 +14,7 @@ class App extends Component {
     containerNum: 1,
     turnSection: 1,
     clock: null,
+    clockIntervalId: null,
     game: undefined,
     teamAId: undefined,
     teamBId: undefined,
@@ -91,11 +92,12 @@ class App extends Component {
     this.setState({intervalId: id})
   };
   
-  startTurn = () => {
+
+  switchToTurnView = () => {
     // console.log("starting turn")
-    const game = this.state.game
-    const currentRound = game.rounds[game.rounds.length - 1]
-    const playerId = this.state.playerId
+    // const game = this.state.game
+    // const currentRound = game.rounds[game.rounds.length - 1]
+    // const playerId = this.state.playerId
 
     this.setState({turnSection: 2})
     // if(currentRound.player_id === playerId){
@@ -107,8 +109,19 @@ class App extends Component {
     this.setState({clock: newTime})
   };
 
+  setClockIntervalId = (id) => {
+    this.setState({clockIntervalId: id})
+  };
+
   endTurn = () => {
-    this.setState({turnSection: 3})
+    const game = this.state.game
+    const currentRound = game.rounds[game.rounds.length - 1]
+
+    clearInterval(this.state.clockIntervalId);
+    alert("Turn Over!")
+    fetch(`http://localhost:3000/rounds/${currentRound.id}/end`, {
+      method: "PATCH"
+    })
   };
 
   switchToCardSubmissionView = () => {
@@ -142,16 +155,16 @@ class App extends Component {
 
         if(gameObj.rounds.length > 0){
           this.setClock(currentRound.clock)
-          
+
           switch(currentRound.turn_part){
             case "lobby":
               this.setState({containerNum: 5});
               break;
             case "play":
-              this.startTurn();
+              this.switchToTurnView();
               break;
             case "end":
-              this.endTurn();
+              this.setState({turnSection: 3});
           }
         }
       })
@@ -207,7 +220,9 @@ class App extends Component {
       updateGame,
       splitPlayersIntoTeams,
       addIntervalId,
-      findPlayerById
+      findPlayerById,
+      setClockIntervalId,
+      endTurn
     } = this
 
     return (
@@ -232,6 +247,8 @@ class App extends Component {
               addGame={addGame}
               addPlayer={addPlayer}
               clock={clock}
+              setClockIntervalId={setClockIntervalId}
+              endTurn={endTurn}
               game={game}
               player={player}
               playerId={playerId}
