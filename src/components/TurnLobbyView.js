@@ -3,7 +3,6 @@ import styles from '../stylesheets/TurnLobbyView.module.css'
 
 class TurnLobbyView extends Component {
   state = {
-    // countDownInterval: null
   }
 
   // starts a turn by round.turn_part === 'play'
@@ -22,11 +21,6 @@ class TurnLobbyView extends Component {
     const clock = setTimeout(this.props.endTurn, 5000);
 
   };
-
-  // endTurn = () => {
-  //   clearInterval(this.state.countDownInterval);
-  //   alert("Turn Over!")
-  // };
 
   // At 1sec intervals sends PATCH requests to server 
   updateClock = () => {

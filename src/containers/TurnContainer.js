@@ -35,6 +35,7 @@ class TurnContainer extends Component {
         return <TurnView
           clock={clock}
           game={game}
+          roundCards={game.rounds[game.rounds.length - 1].submissions}
           player={player}
           playerId={playerId}
           players={players}

@@ -7,22 +7,21 @@ class TurnView extends Component {
     // adjust for playerId
     // showPerformerView: true,
     points: 0,
-    index: 0
-    // cards: []
+    index: 0,
+    cards: this.shuffle([...this.props.roundCards])
+    // "this.shuffle not a function"?
   }
 
   handleClick = (e) => {
-    if(e.target.value === "Got it!"){
-      this.setState(prevState => {
-        return {
-          points: prevState.points + 1,
-          index: prevState.index + 1
-        }
-      })
+    if(e.target.value === "Got it!" && this.state.cards.length > 1){
+      let newCards = [...this.state.cards]
+      newCards.splice(this.state.index, 1)
+      this.setState({cards: newCards})
     }
-    console.log(this.state)
+    console.log(this.state.cards)
   };
 
+  // fisher-yates shuffle
   shuffle = (array) => {
     var m = array.length, t, i;
     while (m) {
@@ -39,6 +38,7 @@ class TurnView extends Component {
     const {
       clock,
       game,
+      roundCards,
       player,
       playerId,
       players,
@@ -46,7 +46,7 @@ class TurnView extends Component {
     } = this.props
 
     const currentRound = game.rounds[game.rounds.length - 1]
-    const shuffledSubmissions = this.shuffle([...currentRound.submissions])
+    const shuffledSubmissions = this.shuffle([...roundCards])
     const cardIndex = this.state.index
 
     return(
@@ -67,7 +67,7 @@ class TurnView extends Component {
           <>
             <div className={styles.card}>
               <h3 className={styles.cardText}>
-                {shuffledSubmissions[cardIndex].content}
+                {this.state.cards[cardIndex].content}
               </h3>
             </div>
             <input

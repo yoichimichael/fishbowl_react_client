@@ -120,7 +120,6 @@ class App extends Component {
     const currentRound = game.rounds[game.rounds.length - 1]
 
     clearInterval(this.state.clockIntervalId);
-    alert("Turn Over!")
     fetch(`http://localhost:3000/rounds/${currentRound.id}/end`, {
       method: "PATCH"
     })
