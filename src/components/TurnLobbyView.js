@@ -5,7 +5,7 @@ class TurnLobbyView extends Component {
   state = {
   }
 
-  // starts a turn by round.turn_part === 'play'
+  // starts a 'turn' by setting round.turn_part = 'play' in rounds table
   // only accessible by 'performer'
   startTurn = () => {
     const game = this.props.game
@@ -15,6 +15,7 @@ class TurnLobbyView extends Component {
       method: "PATCH"
     })
 
+    this.props.loadDeck()
     const countDownIntervalId = setInterval(this.updateClock, 1000)
     this.props.setClockIntervalId(countDownIntervalId)
     // "ends" turn after 5 sec; calls endTurn function in App.js

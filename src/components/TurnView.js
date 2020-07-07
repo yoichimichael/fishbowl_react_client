@@ -6,39 +6,28 @@ class TurnView extends Component {
   state = {
     // adjust for playerId
     // showPerformerView: true,
-    points: 0,
-    index: 0,
-    cards: this.shuffle([...this.props.roundCards])
+    // points: 0,
+    // index: 0,
+    // cards: this.shuffle([...this.props.roundCards])
     // "this.shuffle not a function"?
   }
 
   handleClick = (e) => {
-    if(e.target.value === "Got it!" && this.state.cards.length > 1){
-      let newCards = [...this.state.cards]
-      newCards.splice(this.state.index, 1)
-      this.setState({cards: newCards})
+    if(e.target.value === "Got it!" && this.props.deck.length > 1){
+      this.props.score()
+    } else if (e.target.value === "Pass"){
+      this.props.pass()
     }
-    console.log(this.state.cards)
   };
-
-  // fisher-yates shuffle
-  shuffle = (array) => {
-    var m = array.length, t, i;
-    while (m) {
-      i = Math.floor(Math.random() * m--);
-      t = array[m];
-      array[m] = array[i];
-      array[i] = t;
-    }
-    return array;
-  }
 
   render(){
 
     const {
       clock,
       game,
-      roundCards,
+      deck,
+      deckIndex,
+      passCount,
       player,
       playerId,
       players,
@@ -46,8 +35,8 @@ class TurnView extends Component {
     } = this.props
 
     const currentRound = game.rounds[game.rounds.length - 1]
-    const shuffledSubmissions = this.shuffle([...roundCards])
-    const cardIndex = this.state.index
+    // const shuffledSubmissions = this.shuffle([...roundCards])
+    // const cardIndex = this.state.index
 
     return(
       <>
@@ -67,7 +56,7 @@ class TurnView extends Component {
           <>
             <div className={styles.card}>
               <h3 className={styles.cardText}>
-                {this.state.cards[cardIndex].content}
+                {deck[deckIndex].content}
               </h3>
             </div>
             <input
@@ -76,10 +65,15 @@ class TurnView extends Component {
               onClick={this.handleClick}
             />
             <br/>
-            <input
-              type = "button"
-              value = "Pass"
-            />
+            {passCount < 2 ?
+              <input
+                type = "button"
+                value = "Pass"
+                onClick={this.handleClick}
+              />
+              :
+              null
+            }
           </>
           :
           <>
