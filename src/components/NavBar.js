@@ -4,8 +4,13 @@ import styles from '../stylesheets/NavBar.module.css'
 function NavBar(props) {
 
   const handleClick = () => {
-    props.setToHome()
+    setToHome()
   };
+
+  const {
+    player,
+    setToHome
+  } = props
 
   return(
     <div className={styles.navBar}>
@@ -17,13 +22,13 @@ function NavBar(props) {
       />
       {props.player ?
         <div className={styles.playerInfo}>
-          <p className={styles.name}>{props.player.name}</p>
-          {props.player.team.team_name ? 
+          <p className={styles.name}>{player.name}</p>
+          {player.team.team_name ? 
             <p className={styles.team}>
-              Team: {props.player.team.team_name}
+              Team {player.team.team_letter.toUpperCase()}: {player.team.team_name}
             </p> :
             <p className={styles.team}>
-              Team: {props.player.team.team_letter.toUpperCase()}
+              Team {player.team.team_letter.toUpperCase()}
             </p>
           }
         </div> :
