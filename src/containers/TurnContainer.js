@@ -115,6 +115,7 @@ class TurnContainer extends Component {
     const {
       clock,
       game,
+      cardFlash,
       setClockIntervalId,
       endTurn,
       player,
@@ -141,6 +142,7 @@ class TurnContainer extends Component {
         return <TurnView
           clock={clock}
           game={game}
+          cardFlash={cardFlash}
           // roundCards={game.rounds[game.rounds.length - 1].submissions}
           deck={this.state.deck}
           deckIndex={this.state.deckIndex}

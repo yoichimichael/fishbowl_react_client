@@ -16,6 +16,7 @@ class App extends Component {
     clock: null,
     clockIntervalId: null,
     game: undefined,
+    cardFlash: null,
     teamAId: undefined,
     teamBId: undefined,
     player: undefined,
@@ -150,6 +151,7 @@ class App extends Component {
           players: gameObj.players,
           teamARoster: [],
           teamBRoster: [],
+          cardFlash: gameObj.card_flash
         })
         this.splitPlayersIntoTeams(gameObj.players)
         this.switchToCardSubmissionView()
@@ -199,6 +201,7 @@ class App extends Component {
       containerNum,
       turnSection,
       clock,
+      cardFlash,
       game,
       teamAId,
       teamBId,
@@ -251,6 +254,7 @@ class App extends Component {
               setClockIntervalId={setClockIntervalId}
               endTurn={endTurn}
               game={game}
+              cardFlash={cardFlash}
               player={player}
               playerId={playerId}
               players={players}

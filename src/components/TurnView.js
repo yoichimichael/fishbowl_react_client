@@ -25,6 +25,7 @@ class TurnView extends Component {
     const {
       clock,
       game,
+      cardFlash,
       deck,
       deckIndex,
       passCount,
@@ -54,7 +55,8 @@ class TurnView extends Component {
         <h3 className={styles.h3}>Time Left:</h3>
         <h1>{clock} s</h1>
         {currentRound.player_id === playerId ? 
-          <>{ !gotLastCard ?
+          <>
+            { !gotLastCard ?
               <div className={styles.card}>
                 <h3 className={styles.cardText}>
                   {deck[deckIndex].content}
@@ -83,6 +85,15 @@ class TurnView extends Component {
           :
           <>
             <br/>
+            { cardFlash ?
+              <div className={styles.card}>
+                <h3 className={styles.cardText}>
+                  {cardFlash}
+                </h3>
+              </div>
+              :
+              null
+            }
             <h3>Current Performer:</h3>
             <br/>
             <h2>{

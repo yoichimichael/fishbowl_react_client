@@ -27,6 +27,7 @@ class MainContainer extends Component {
       addPlayer,
       clock,
       game,
+      cardFlash,
       setClockIntervalId,
       endTurn,
       player,
@@ -86,6 +87,7 @@ class MainContainer extends Component {
         return <TurnContainer
           turnSection={turnSection} 
           clock={clock}
+          cardFlash={cardFlash}
           game={game}
           setClockIntervalId={setClockIntervalId}
           endTurn={endTurn}
