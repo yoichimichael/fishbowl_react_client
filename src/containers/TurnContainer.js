@@ -25,6 +25,34 @@ class TurnContainer extends Component {
     return array;
   }
 
+  flashCard = () => {
+    const game = this.props.game
+    const deck = this.state.deck
+    const deckIndex = this.state.deckIndex
+
+    fetch(`http://localhost:3000/games/${game.id}/flash`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json"
+      },
+      body: JSON.stringify({
+        host_name: 'empty',
+        join_code: 'empty',
+        flash_card: `${deck[deckIndex].content}`
+      }) 
+    })
+  };
+
+  unflashCard = () => {
+    const game = this.props.game
+
+    fetch(`http://localhost:3000/games/${game.id}/unflash`, {
+      method: "PATCH"
+    })
+  };
+
+
   loadDeck = () => {
     const game = this.props.game
     const roundCards = game.rounds[game.rounds.length - 1].submissions
@@ -38,6 +66,9 @@ class TurnContainer extends Component {
   score = () => {
     let deckCopy = [...this.state.deck]
     const guessedCard = deckCopy.splice(this.state.deckIndex, 1)
+
+    this.flashCard()
+    setTimeout(this.unflashCard, 1000)
 
     this.setState(prevState => {
       if(this.state.deck.length === 1){
