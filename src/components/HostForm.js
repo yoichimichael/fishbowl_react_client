@@ -31,7 +31,9 @@ class HostForm extends Component {
       },
       body: JSON.stringify({
         join_code: this.generateJoinCode(),
-        host_name: this.state.hostName
+        host_name: this.state.hostName,
+        // 'empty' because req in strong params
+        flash_card: 'empty'
       }) 
     })
       .then(resp => resp.json())
