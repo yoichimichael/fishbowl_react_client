@@ -30,10 +30,10 @@ class TurnEndView extends Component {
           Team B: {teamB? teamB.team_name : "The Jets"}
         </h3>
         <h1 className={styles.teamAScore}>
-          {teamA && performer.team_id === teamA.id ? teamA.score + points : teamA.score}
+          {teamA ? teamA.score : "00"}
         </h1>
         <h1 className={styles.teamBScore}>
-          {teamB && performer.team_id === teamB.id ? teamB.score + points : teamB.score}
+          {teamB ? teamB.score : "00"}
         </h1>
         <h3 className={styles.cardsLeft}>Cards Left in Fishbowl:</h3>
         {/* updated deck can only be seen by performer */}

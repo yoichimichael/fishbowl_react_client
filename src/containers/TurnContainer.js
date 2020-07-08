@@ -25,6 +25,7 @@ class TurnContainer extends Component {
     return array;
   }
 
+  // also adds points
   flashCard = () => {
     const game = this.props.game
     const deck = this.state.deck
@@ -39,7 +40,8 @@ class TurnContainer extends Component {
       body: JSON.stringify({
         host_name: 'empty',
         join_code: 'empty',
-        flash_card: `${deck[deckIndex].content}`
+        flash_card: `${deck[deckIndex].content}`,
+        team_id: this.props.performer.team_id
       }) 
     })
   };
@@ -176,4 +178,4 @@ class TurnContainer extends Component {
   };
 };
 
-export default TurnContainer;
+export default TurnContainer; 
