@@ -1,3 +1,71 @@
-.h1 {
-  margin-top: 0px;
+.h3 {
+  position: absolute;
+  margin-top: 160px;
+  margin-left: 80px;
+  font-family: Dosis, "Baloo 2", "IBM Plex Mono"
+}
+
+.h2 {
+  position: absolute;
+  margin-top: 200px;
+  margin-left: 120px;
+  font-family: Dosis, "Baloo 2", "IBM Plex Mono"
+}
+
+.teamAName {
+  color: #F49A11;
+  position: absolute;
+  margin-top: 250px;
+  margin-left: 5px;
+  font-family: Dosis, "Baloo 2", "IBM Plex Mono"
+}
+
+.teamBName {
+  color: #84C0F7;
+  position: absolute;
+  margin-top: 250px;
+  margin-left: 170px;
+  font-family: Dosis, "Baloo 2", "IBM Plex Mono"
+}
+
+.teamAScore {
+  position: absolute;
+  margin-top: 280px;
+  margin-left: 60px;
+  font-family: Dosis, "Baloo 2", "IBM Plex Mono"
+}
+
+.teamBScore {
+  position: absolute;
+  margin-top: 280px;
+  margin-left: 220px;
+  font-family: Dosis, "Baloo 2", "IBM Plex Mono"
+}
+
+.cardsLeft{
+  font-family: Dosis, "Baloo 2", "IBM Plex Mono";
+  position: absolute;
+  margin-top: 340px;
+  margin-left: 70px;
+}
+
+.cardNum{
+  font-family: Dosis, "Baloo 2", "IBM Plex Mono";
+  position: absolute;
+  margin-top: 370px;
+  margin-left: 130px;
+}
+
+.next{
+  font-family: Dosis, "Baloo 2", "IBM Plex Mono";
+  position: absolute;
+  margin-top: 420px;
+  margin-left: 90px;
+}
+
+.nextName{
+  font-family: Dosis, "Baloo 2", "IBM Plex Mono";
+  position: absolute;
+  margin-top: 450px;
+  margin-left: 100px;
 }

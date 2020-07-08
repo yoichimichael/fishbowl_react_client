@@ -40,15 +40,6 @@ class PlayerLobby extends Component {
                 key={player.id} 
                 name={player.name}
               />)}
-              {/* <tr>
-                <td>Jake</td>
-              </tr>
-              <tr>
-                <td>Sally</td>
-              </tr>
-              <tr>
-                <td>Jim</td>
-              </tr> */}
             </tbody>
           </table>
         </div>
@@ -64,15 +55,6 @@ class PlayerLobby extends Component {
                 key={player.id} 
                 name={player.name}
               />)}
-              {/* <tr>
-                <td>Shamiq</td>
-              </tr>
-              <tr>
-                <td>Wendy</td>
-              </tr>
-              <tr>
-                <td>Tetsuro</td>
-              </tr> */}
             </tbody>
           </table>
         </div>

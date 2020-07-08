@@ -7,6 +7,7 @@ import CardFormContainer from './CardFormContainer'
 // import TurnLobbyView from '../components/TurnLobbyView'
 // import TurnView from '../components/TurnView'
 import TurnContainer from './TurnContainer'
+import TurnEndView from '../components/TurnEndView'
 
 class MainContainer extends Component {
 
@@ -96,10 +97,8 @@ class MainContainer extends Component {
           players={players}
           findPlayerById={findPlayerById}
         />
-      // case 6:
-      //   return <TurnView 
-      //     clock={clock}
-      //   />
+      case 6:
+        return <TurnEndView/>
     }
   }
 }
