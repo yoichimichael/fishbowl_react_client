@@ -11,7 +11,7 @@ class TurnEndView extends Component {
       deck,
       teamA,
       teamB,
-      performer,
+      performer, // this is a round???
       points
     } = this.props
 
@@ -19,6 +19,7 @@ class TurnEndView extends Component {
       <>
         <h1 className={styles.timesUp}>Time's Up!</h1>
         <h3 className={styles.h3}>
+          {/* updated points can only be seen by performer */}
           {performer? performer.name : "Performer"} got <u>{points ? points : 9}</u> points
         </h3>
         <h2 className={styles.h2}>Score:</h2>
@@ -29,15 +30,18 @@ class TurnEndView extends Component {
           Team B: {teamB? teamB.team_name : "The Jets"}
         </h3>
         <h1 className={styles.teamAScore}>
-          {teamA ? teamA.score : 99}
+          {teamA && performer.team_id === teamA.id ? teamA.score + points : teamA.score}
         </h1>
         <h1 className={styles.teamBScore}>
-          {teamB ? teamB.score : 99}
+          {teamB && performer.team_id === teamB.id ? teamB.score + points : teamB.score}
         </h1>
         <h3 className={styles.cardsLeft}>Cards Left in Fishbowl:</h3>
-        <h1 className={styles.cardNum}>{deck.length}</h1>
+        {/* updated deck can only be seen by performer */}
+        <h1 className={styles.cardNum}>
+          {deck? deck.length : 88}
+        </h1>
         <h3 className={styles.next}>Next Performer:</h3>
-        <h2 className={styles.nextName}>Alexander</h2>
+        <h2 className={styles.nextName}>The Next Guy!</h2>
       </>
     )
   };

@@ -11,7 +11,7 @@ class App extends Component {
   state = {
     showRules: false,
     showForms: false,
-    containerNum: 6,
+    containerNum: 1,
     turnSection: 1,
     clock: null,
     clockIntervalId: null,
@@ -138,7 +138,7 @@ class App extends Component {
     fetch(`http://localhost:3000/games/${gameId}`)
       .then(resp => resp.json())
       .then(gameObj => {
-        const currentRound = gameObj.rounds[gameObj.rounds.length - 1] 
+        const currentRound = gameObj.rounds[gameObj.rounds.length - 1]
 
         this.setState({
           game: gameObj,
@@ -148,13 +148,15 @@ class App extends Component {
           teamB: gameObj.teams[1],
           teamARoster: [],
           teamBRoster: [],
-          performer: currentRound.performer,
+          // performer: currentRound.performer,
           cardFlash: gameObj.card_flash
         })
         this.splitPlayersIntoTeams(gameObj.players)
         this.switchToCardSubmissionView()
 
+        // if a round has been created
         if(gameObj.rounds.length > 0){
+          this.setState({performer: currentRound.performer})
           this.setClock(currentRound.clock)
 
           switch(currentRound.turn_part){

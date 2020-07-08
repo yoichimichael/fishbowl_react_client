@@ -103,8 +103,8 @@ class MainContainer extends Component {
           performer={performer}
           findPlayerById={findPlayerById}
         />
-      case 6:
-        return <TurnEndView/>
+      // case 6:
+      //   return <TurnEndView/>
     }
   }
 }
