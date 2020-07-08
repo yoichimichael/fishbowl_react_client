@@ -34,8 +34,11 @@ class MainContainer extends Component {
       player,
       playerId,
       players,
+      performer,
       addToPlayers,
       addTeamIds,
+      teamA,
+      teamB,
       teamAId,
       teamBId,
       teamARoster,
@@ -90,11 +93,14 @@ class MainContainer extends Component {
           clock={clock}
           cardFlash={cardFlash}
           game={game}
+          teamA={teamA}
+          teamB={teamB}
           setClockIntervalId={setClockIntervalId}
           endTurn={endTurn}
           player={player}
           playerId={playerId}
           players={players}
+          performer={performer}
           findPlayerById={findPlayerById}
         />
       case 6:

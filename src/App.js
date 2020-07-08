@@ -16,12 +16,15 @@ class App extends Component {
     clock: null,
     clockIntervalId: null,
     game: undefined,
+    teamA: undefined,
+    teamB: undefined,
     cardFlash: null,
     teamAId: undefined,
     teamBId: undefined,
     player: undefined,
     playerId: undefined,
     players: [],
+    performer: undefined,
     teamARoster: [],
     teamBRoster: [],
     intervalId: null
@@ -95,15 +98,7 @@ class App extends Component {
   
 
   switchToTurnView = () => {
-    // console.log("starting turn")
-    // const game = this.state.game
-    // const currentRound = game.rounds[game.rounds.length - 1]
-    // const playerId = this.state.playerId
-
     this.setState({turnSection: 2})
-    // if(currentRound.player_id === playerId){
-    //   const clock = setTimeout(function(){ alert("Hello"); }, 2000);
-    // }
   };
 
   setClock = (newTime) => {
@@ -149,8 +144,11 @@ class App extends Component {
           game: gameObj,
           player: this.findPlayerById(gameObj.players, this.state.playerId),
           players: gameObj.players,
+          teamA: gameObj.teams[0],
+          teamB: gameObj.teams[1],
           teamARoster: [],
           teamBRoster: [],
+          performer: currentRound.performer,
           cardFlash: gameObj.card_flash
         })
         this.splitPlayersIntoTeams(gameObj.players)
@@ -203,11 +201,14 @@ class App extends Component {
       clock,
       cardFlash,
       game,
+      teamA,
+      teamB,
       teamAId,
       teamBId,
       player,
       playerId,
       players,
+      performer,
       teamARoster,
       teamBRoster
     } = this.state
@@ -258,8 +259,11 @@ class App extends Component {
               player={player}
               playerId={playerId}
               players={players}
+              performer={performer}
               addToPlayers={addToPlayers}
               addTeamIds={addTeamIds}
+              teamA={teamA}
+              teamB={teamB}
               teamAId={teamAId}
               teamBId={teamBId}
               teamARoster={teamARoster}

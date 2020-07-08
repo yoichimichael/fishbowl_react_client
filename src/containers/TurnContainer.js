@@ -113,19 +113,27 @@ class TurnContainer extends Component {
     // console.log(this.state.deck, this.state.guessedCards)
 
     const {
+      points,
+      deck
+    } = this.state
+
+    const {
       clock,
       game,
+      teamA,
+      teamB,
       cardFlash,
       setClockIntervalId,
       endTurn,
       player,
       playerId,
       players,
+      performer,
       findPlayerById,
       turnSection
     } = this.props
 
-
+    const currentRound = game.rounds[game.rounds.length -1]
 
     switch(turnSection){
       case 1: 
@@ -157,7 +165,13 @@ class TurnContainer extends Component {
           findPlayerById={findPlayerById}
         />
       case 3:
-        return <TurnEndView/>
+        return <TurnEndView
+          deck={deck}
+          points={points}
+          performer={performer}
+          teamA={teamA}
+          teamB={teamB}
+        />
     }
   };
 };
