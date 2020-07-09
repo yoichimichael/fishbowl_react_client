@@ -44,7 +44,7 @@ class MainContainer extends Component {
       teamARoster,
       teamBRoster,
       updateGame,
-      splitPlayersIntoTeams,
+      // splitPlayersIntoTeams,
       addIntervalId,
       findPlayerById
     } = this.props
@@ -65,7 +65,7 @@ class MainContainer extends Component {
           addToPlayers={addToPlayers}
           addTeamIds={addTeamIds}
           updateGame={updateGame}
-          splitPlayersIntoTeams={splitPlayersIntoTeams}
+          // splitPlayersIntoTeams={splitPlayersIntoTeams}
           addIntervalId={addIntervalId}
         />
       case 2:

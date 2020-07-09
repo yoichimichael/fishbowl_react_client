@@ -150,7 +150,7 @@ class App extends Component {
     }
   };
 
-  // controls game flow
+  // controls game data updating and flow
   updateGame = (gameId) => {
     fetch(`http://localhost:3000/games/${gameId}`)
       .then(resp => resp.json())
@@ -163,12 +163,12 @@ class App extends Component {
           players: gameObj.players,
           teamA: this.returnTeamA(gameObj.teams),
           teamB: this.returnTeamB(gameObj.teams),
-          teamARoster: [],
-          teamBRoster: [],
+          teamARoster: this.getTeamAPlayers(gameObj.players),
+          teamBRoster: this.getTeamBPlayers(gameObj.players),
           cardFlash: gameObj.card_flash
         })
 
-        this.splitPlayersIntoTeams(gameObj.players)
+        // this.splitPlayersIntoTeams(gameObj.players)
         this.switchToCardSubmissionView()
 
         // if a round has been created
@@ -192,23 +192,43 @@ class App extends Component {
       })
   };
 
-  splitPlayersIntoTeams = (players) => {
+  getTeamAPlayers = (players) => {
+    const teamAPlayers = []
     players.forEach(player => {
       if(player.team.team_letter === "a"){
-        this.setState(prevState => {
-          return {
-            teamARoster: [...prevState.teamARoster, player]
-          }
-        })
-      } else {
-        this.setState(prevState => {
-          return {
-            teamBRoster: [...prevState.teamBRoster, player]
-          }
-        })
+        teamAPlayers.push(player)
       }
     })
+    return teamAPlayers
   };
+
+  getTeamBPlayers = (players) => {
+    const teamBPlayers = []
+    players.forEach(player => {
+      if(player.team.team_letter === "b"){
+        teamBPlayers.push(player)
+      }
+    })
+    return teamBPlayers
+  };
+
+  // splitPlayersIntoTeams = (players) => {
+  //   players.forEach(player => {
+  //     if(player.team.team_letter === "a"){
+  //       this.setState(prevState => {
+  //         return {
+  //           teamARoster: [...prevState.teamARoster, player]
+  //         }
+  //       })
+  //     } else {
+  //       this.setState(prevState => {
+  //         return {
+  //           teamBRoster: [...prevState.teamBRoster, player]
+  //         }
+  //       })
+  //     }
+  //   })
+  // };
 
 
   render(){
@@ -244,7 +264,7 @@ class App extends Component {
       addToPlayers,
       addTeamIds,
       updateGame,
-      splitPlayersIntoTeams,
+      // splitPlayersIntoTeams,
       addIntervalId,
       findPlayerById,
       setClockIntervalId,
@@ -290,7 +310,7 @@ class App extends Component {
               teamARoster={teamARoster}
               teamBRoster={teamBRoster}
               updateGame={updateGame}
-              splitPlayersIntoTeams={splitPlayersIntoTeams}
+              // splitPlayersIntoTeams={splitPlayersIntoTeams}
               addIntervalId={addIntervalId}
               findPlayerById={findPlayerById}
             />

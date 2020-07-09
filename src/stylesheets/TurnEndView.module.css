@@ -2,7 +2,7 @@
   color: #F49A11;
   position: absolute;
   margin-top: 50px;
-  margin-left: 80px;
+  margin-left: 90px;
   font-family: Dosis, "Baloo 2", "IBM Plex Mono"
 }
 
@@ -16,7 +16,7 @@
 .h2 {
   position: absolute;
   margin-top: 180px;
-  margin-left: 120px;
+  margin-left: 90px;
   font-family: Dosis, "Baloo 2", "IBM Plex Mono"
 }
 
@@ -38,14 +38,14 @@
 
 .teamAScore {
   position: absolute;
-  margin-top: 275px;
+  margin-top: 260px;
   margin-left: 60px;
   font-family: Dosis, "Baloo 2", "IBM Plex Mono"
 }
 
 .teamBScore {
   position: absolute;
-  margin-top: 275px;
+  margin-top: 260px;
   margin-left: 220px;
   font-family: Dosis, "Baloo 2", "IBM Plex Mono"
 }
@@ -61,7 +61,7 @@
   font-family: Dosis, "Baloo 2", "IBM Plex Mono";
   position: absolute;
   margin-top: 360px;
-  margin-left: 130px;
+  margin-left: 140px;
 }
 
 .next{
@@ -76,5 +76,5 @@
   font-family: Dosis, "Baloo 2", "IBM Plex Mono";
   position: absolute;
   margin-top: 445px;
-  margin-left: 100px;
+  margin-left: 120px;
 }
