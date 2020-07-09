@@ -66,6 +66,7 @@ class TurnView extends Component {
               null
             }
             <input
+              className={styles.gotIt}
               type = "button"
               value = "Got it!"
               onClick={this.handleClick}
@@ -74,6 +75,7 @@ class TurnView extends Component {
             {/* change back to 2 later */}
             {passCount < 50 ?
               <input
+                className={styles.pass}
                 type = "button"
                 value = "Pass"
                 onClick={this.handleClick}
