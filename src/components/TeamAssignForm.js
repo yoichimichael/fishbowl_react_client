@@ -51,7 +51,7 @@ class TeamAssignForm extends Component {
           {game.join_code}
         </h1>
         <input
-          className={styles.startGameButton}
+          className={styles.createGameButton}
           type="button"
           value="Create Game"
           onClick={this.handleClick}

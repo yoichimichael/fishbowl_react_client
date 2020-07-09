@@ -1,6 +1,7 @@
 .h3 {
   margin-top: 0px;
   font-family: Dosis, "Baloo 2", "IBM Plex Mono";
+  font-size: 22px;
 }
 
 .h1 {
@@ -9,7 +10,7 @@
   color: #F49A11
 }
 
-.startGameButton {
+.createGameButton {
   margin-bottom: 20px;
   position: relative;
   background-color: #F49A11;
