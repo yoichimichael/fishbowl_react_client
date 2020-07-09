@@ -9,21 +9,24 @@
 }
 
 .h3 {
-  color: #F49A11
+  color: #F49A11;
+  font-size: 20px;
 }
 
 .teamATable {
   position: absolute;
   margin-left: 50px;
+  font-size: 25px;
 }
 
 .teamBTable {
   position: absolute;
   margin-left: 210px;
+  font-size: 25px;
 }
 
 .teamA {
-  color: #F49A11
+  color: #F49A11;
 }
 
 .teamB {

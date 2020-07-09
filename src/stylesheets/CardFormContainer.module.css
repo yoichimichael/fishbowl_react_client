@@ -2,11 +2,39 @@
   margin-top: 0px;
 }
 
-.button {
-  margin-top: 20px
+.textInput{
+  width: 70%;
+  height: 20px;
+  border: 2px solid #84C0F7;
+  border-radius: 4px;
+  font-size: 18px;
+}
+
+.createButton {
+  margin-top: 20px;
+  background-color: #F49A11;
+  border: none;
+  border-radius: 4px;
+  padding: 15px 32px;
+  color: white;
+  font-size: 20px;
+}
+
+.submitButton {
+  background-color: #F49A11;
+  border: none;
+  border-radius: 4px;
+  padding: 15px 32px;
+  color: white;
+  font-size: 20px;
 }
 
 .waitingText {
   position: absolute;
   margin-top: 200px;
+}
+
+.list {
+  font-size: 22px;
+  margin: 0px;
 }

@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import styles from '../stylesheets/PlayerRow.module.css'
 
 class PlayerRow extends Component {
   
@@ -36,7 +37,7 @@ class PlayerRow extends Component {
     } = this.props
 
     return(
-      <tr>
+      <tr className={styles.row}>
         <td 
           style={{"textDecoration": "underline"}}>{name}
         </td>

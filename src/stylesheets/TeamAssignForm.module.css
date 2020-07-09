@@ -1,5 +1,6 @@
 .h3 {
   margin-top: 0px;
+  margin-bottom: 0px;
   font-family: Dosis, "Baloo 2", "IBM Plex Mono";
   font-size: 22px;
 }
@@ -11,7 +12,7 @@
 }
 
 .createGameButton {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   position: relative;
   background-color: #F49A11;
   border: none;
@@ -22,21 +23,38 @@
 }
 
 .teamAInputDiv {
-  position: absolute
+  position: absolute;
+  font-size: 18px;
 }
 
 .teamBInputDiv {
   position: absolute;
   margin-left: 160px;
+  font-size: 18px;
+}
+
+.teamAName {
+  /* font-size: 30px; */
+}
+
+.teamBName {
+  /* font-size: 20px; */
 }
 
 .teamAInput {
-  width: 75%
-
+  width: 70%;
+  height: 20px;
+  border: 2px solid #84C0F7;
+  border-radius: 4px;
+  font-size: 18px;
 }
 
 .teamBInput {
-  width: 75%
+  width: 75%;
+  height: 20px;
+  border: 2px solid #84C0F7;
+  border-radius: 4px;
+  font-size: 18px;
 }
 
 .tableHeaders {
@@ -55,5 +73,7 @@
 
 .table {
   width: 90%;
-  margin-top: 50px;
+  margin-top: 60px;
+  font-size: 22px;
+
 }

@@ -57,7 +57,9 @@ class TeamAssignForm extends Component {
           onClick={this.handleClick}
         />
         <div className={styles.teamAInputDiv}>
-          <label htmlFor="teamA">Team A Name:</label>
+          <label htmlFor="teamA" classname={styles.teamAName}>
+            Team A Name:
+          </label>
           <br/>
           <input 
             className={styles.teamAInput}
@@ -69,7 +71,9 @@ class TeamAssignForm extends Component {
           />
         </div>
         <div className={styles.teamBInputDiv}>
-          <label htmlFor="teamB">Team B Name:</label>
+          <label htmlFor="teamB" classname={styles.teamBName}>
+            Team B Name:
+          </label>
           <br/>
           <input 
             className={styles.teamBInput}

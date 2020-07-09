@@ -66,7 +66,7 @@ class CardFormContainer extends Component {
               />
               <br/>
               <input
-                className={styles.button}
+                className={styles.createButton}
                 type="button"
                 value="Create Card"
                 onClick={this.handleClick}
@@ -76,12 +76,13 @@ class CardFormContainer extends Component {
             </> 
             :
             <input
+            className={styles.submitButton}
               type="button"
               value="Submit Cards to the Fishbowl"
               onClick={this.handleClick}
             />
           }
-          <ul>
+          <ul className={styles.list}>
             {this.state.cards.map(card => {
               return <Card 
                 key={this.state.cards.indexOf(card)}

@@ -1,10 +1,12 @@
 import React from 'react';
+import styles from '../stylesheets/Card.module.css'
 
 function Card(props){
   return (
-    <li>
+    <li className={styles.card}>
       {props.text}
       <input
+        className={styles.button}
          type="button"
          value="x"
          name={props.text}

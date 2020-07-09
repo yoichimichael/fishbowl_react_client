@@ -1,0 +1,13 @@
+.card{
+  font-size: 20px;
+}
+
+.button{
+  margin-left: 30px;
+  margin-top: 5px;
+  background-color: #84C0F7;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 10px;
+  font-size: 16px
+}
