@@ -19,7 +19,7 @@ class HomeView extends Component {
     return(
       <>
         <br/>
-        <p>A Video Chat Companion</p>
+        <p className={styles.chatCompanion}>A Video Chat Companion</p>
         <input
           onClick={this.handleClick}
           className={styles.gameButton}

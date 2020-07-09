@@ -1,19 +1,28 @@
+.chatCompanion {
+  font-size: 20px
+}
+
 .gameButton {
-  margin-top: 40px;
+  margin-top: 35px;
   position: relative;
   background-color: #F49A11;
   border: none;
   border-radius: 4px;
   padding: 15px 32px;
   color: white;
-  font-size: 16px;
+  font-size: 20px;
 }
 
 .rulesButton {
   position: absolute;
-  bottom: 20px;
+  bottom: 40px;
   left: 50%;
-  margin-left: -26px;
+  margin-left: -50px;
+  background-color: #84C0F7;
+  border: none;
+  border-radius: 4px;
+  padding: 15px 32px;
+  font-size: 16px
 }
  
 /* below is testion for position of card flashing */

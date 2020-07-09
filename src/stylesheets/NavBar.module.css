@@ -17,12 +17,14 @@
 
 .playerInfo {
   position: absolute;
-  margin-top: 5px;
-  margin-left: 120px
+  margin-top: 2px;
+  margin-left: 90px;
+  font-family: Dosis, "Baloo 2", "IBM Plex Mono";
+  font-size: 18px;
 }
 
 .name {
-  margin: 0px
+  margin: 0px;
 }
 
 .team {
