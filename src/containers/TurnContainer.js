@@ -25,7 +25,7 @@ class TurnContainer extends Component {
     return array;
   }
 
-  // also adds points
+  // also adds points to team score
   flashCard = () => {
     const game = this.props.game
     const deck = this.state.deck
@@ -70,9 +70,11 @@ class TurnContainer extends Component {
     const guessedCard = deckCopy.splice(this.state.deckIndex, 1)
 
     this.flashCard()
+
     setTimeout(this.unflashCard, 1000)
 
     this.setState(prevState => {
+      // later this will be when round ends (because last card)
       if(this.state.deck.length === 1){
         this.props.endTurn()
         return {

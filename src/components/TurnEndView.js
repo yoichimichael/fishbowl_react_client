@@ -22,12 +22,12 @@ class TurnEndView extends Component {
           {/* updated points can only be seen by performer */}
           {performer? performer.name : "Performer"} got <u>{points ? points : 9}</u> points
         </h3>
-        <h2 className={styles.h2}>Score:</h2>
+        <h2 className={styles.h2}>Team Scores:</h2>
         <h3 className={styles.teamAName}>
-          Team A: {teamA ? teamA.team_name : "The Sharks"}
+          {teamA ? teamA.team_name : "The Sharks"}
         </h3>
         <h3 className={styles.teamBName}>
-          Team B: {teamB? teamB.team_name : "The Jets"}
+          {teamB? teamB.team_name : "The Jets"}
         </h3>
         <h1 className={styles.teamAScore}>
           {teamA ? teamA.score : "00"}
