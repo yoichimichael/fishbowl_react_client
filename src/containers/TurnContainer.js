@@ -81,6 +81,13 @@ class TurnContainer extends Component {
           deck: deckCopy,
           gotLastCard: !prevState.gotLastCard
         }
+      } else if (this.state.deckIndex === this.state.deck.length - 1){
+        return {
+          points: prevState.points + 1,
+          guessedCards: [...prevState.guessedCards, guessedCard],
+          deck: deckCopy,
+          deckIndex: 0
+        }
       } else {
         // console.log(`${this.state.deck.length - 1} cards left`)
         return {
@@ -89,7 +96,7 @@ class TurnContainer extends Component {
           deck: deckCopy
         }
       }
-    })
+    }, () => console.log(this.state.deck, this.state.guessedCards))
     // , () => console.log(this.state.deck, this.state.guessedCards)
   };
 

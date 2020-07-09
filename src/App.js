@@ -165,7 +165,6 @@ class App extends Component {
           teamB: this.returnTeamB(gameObj.teams),
           teamARoster: [],
           teamBRoster: [],
-          // performer: currentRound.performer,
           cardFlash: gameObj.card_flash
         })
 
