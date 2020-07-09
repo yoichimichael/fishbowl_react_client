@@ -133,6 +133,8 @@ class TurnContainer extends Component {
       game,
       teamA,
       teamB,
+      teamARoster,
+      teamBRoster,
       cardFlash,
       setClockIntervalId,
       endTurn,
@@ -178,10 +180,12 @@ class TurnContainer extends Component {
       case 3:
         return <TurnEndView
           deck={deck}
-          points={points}
           performer={performer}
           teamA={teamA}
           teamB={teamB}
+          teamARoster={teamARoster}
+          teamBRoster={teamBRoster}
+          currentRound={currentRound}
         />
     }
   };

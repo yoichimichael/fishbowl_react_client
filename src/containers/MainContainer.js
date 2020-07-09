@@ -95,6 +95,8 @@ class MainContainer extends Component {
           game={game}
           teamA={teamA}
           teamB={teamB}
+          teamARoster={teamARoster}
+          teamBRoster={teamBRoster}
           setClockIntervalId={setClockIntervalId}
           endTurn={endTurn}
           player={player}
