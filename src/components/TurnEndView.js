@@ -72,7 +72,8 @@ class TurnEndView extends Component {
           {currentRound.submissions.length - performer.turn_score}
         </h1>
         <h3 className={styles.next}>Next Performer:</h3>
-        <h2 className={styles.nextName}>{this.findNextPlayer(performer).name}
+        <h2 className={styles.nextName}>
+          {this.findNextPlayer().name}
         </h2>
       </>
     )

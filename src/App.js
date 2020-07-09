@@ -173,6 +173,8 @@ class App extends Component {
 
         // if a round has been created
         if(gameObj.rounds.length > 0){
+          // change later to be a player obj, not performer obj
+          // i.e. don't use round to get 'performer'
           this.setState({performer: currentRound.performer})
           this.setClock(currentRound.clock)
 
