@@ -19,7 +19,7 @@ class TurnLobbyView extends Component {
     const countDownIntervalId = setInterval(this.updateClock, 1000)
     this.props.setClockIntervalId(countDownIntervalId)
     // "ends" turn after 5 sec; calls endTurn function in App.js
-    const clock = setTimeout(this.props.endTurn, 5000);
+    const clock = setTimeout(this.props.endTurn, 15000);
 
   };
 

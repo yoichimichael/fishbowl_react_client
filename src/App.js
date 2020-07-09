@@ -76,6 +76,23 @@ class App extends Component {
     return players.find(player => player.id === id)
   };
 
+  // returns team with team_letter === "a" from game's pair of teams 
+  returnTeamA = (teams) => {
+    if(teams[0].team_letter === 'a'){
+      return teams[0]
+    } else {
+      return teams[1]
+    }
+  };
+  // returns team with team_letter === "b" from game's pair of teams
+  returnTeamB = (teams) => {
+    if(teams[0].team_letter === 'b'){
+      return teams[0]
+    } else {
+      return teams[1]
+    }
+  }
+
   addToPlayers = (playerObj) => {
     this.setState(prevState => {
       return {
@@ -123,8 +140,8 @@ class App extends Component {
 
   switchToCardSubmissionView = () => {
     if(this.state.game && this.state.game.submissions.length === 0){      
-      const teamA = this.state.game.teams[0]
-      const teamB = this.state.game.teams[1]
+      const teamA = this.state.teamA
+      const teamB = this.state.teamB
 
       // shows CardFormContainer
       if(teamA.team_name && teamB.team_name){
@@ -144,13 +161,14 @@ class App extends Component {
           game: gameObj,
           player: this.findPlayerById(gameObj.players, this.state.playerId),
           players: gameObj.players,
-          teamA: gameObj.teams[0],
-          teamB: gameObj.teams[1],
+          teamA: this.returnTeamA(gameObj.teams),
+          teamB: this.returnTeamB(gameObj.teams),
           teamARoster: [],
           teamBRoster: [],
           // performer: currentRound.performer,
           cardFlash: gameObj.card_flash
         })
+
         this.splitPlayersIntoTeams(gameObj.players)
         this.switchToCardSubmissionView()
 
