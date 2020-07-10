@@ -73,7 +73,7 @@ class TurnView extends Component {
             />
             <br/>
             {/* change back to 2 later */}
-            {passCount < 50 ?
+            {passCount < 2 ?
               <input
                 className={styles.pass}
                 type = "button"
