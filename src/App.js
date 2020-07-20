@@ -126,15 +126,22 @@ class App extends Component {
     this.setState({clockIntervalId: id})
   };
 
-  // called by a timeOut in startTurn() method by
+  // below method called by a timeOut in startTurn() method by
   // performer by pressing 'Go!'
-  endTurn = () => {
+  endTurn = (submissionIds) => {
     const game = this.state.game
     const currentRound = game.rounds[game.rounds.length - 1]
 
     clearInterval(this.state.clockIntervalId);
     fetch(`http://localhost:3000/rounds/${currentRound.id}/end`, {
-      method: "PATCH"
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json"
+      },
+      body: JSON.stringify({
+        submissionIDs: submissionIds
+      })
     })
   };
 
