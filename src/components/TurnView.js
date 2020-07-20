@@ -72,7 +72,7 @@ class TurnView extends Component {
               onClick={this.handleClick}
             />
             <br/>
-            {/* change back to 2 later */}
+            {/* num times player can pass */}
             {passCount < 2 ?
               <input
                 className={styles.pass}
