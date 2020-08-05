@@ -69,6 +69,9 @@ class TurnContainer extends Component {
   score = () => {
     let deckCopy = [...this.state.deck]
     const guessedCard = deckCopy.splice(this.state.deckIndex, 1)
+    const submissionIds = this.state.guessedCards.map(card => {
+      card.id
+    })
 
     this.flashCard()
 
@@ -77,7 +80,7 @@ class TurnContainer extends Component {
     this.setState(prevState => {
       // later this will be when round ends (because last card)
       if(this.state.deck.length === 1){
-        this.props.endTurn()
+        this.props.endTurn(submissionIds)
         return {
           points: prevState.points + 1,
           guessedCards: [...prevState.guessedCards, guessedCard],
