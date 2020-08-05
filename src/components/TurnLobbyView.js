@@ -17,13 +17,14 @@ class TurnLobbyView extends Component {
 
     this.props.loadDeck()
     const countDownIntervalId = setInterval(this.updateClock, 1000)
-    this.props.setClockIntervalId(countDownIntervalId)
-    // "ends" turn after 5 sec; calls endTurn function in App.js
+
+    // "ends" turn after specified secs; calls endTurn function in App.js
     const clock = setTimeout(this.props.endTurn, 15000);
 
+    this.props.setClockTimeoutAndIntervalIds(countDownIntervalId, clock)
   };
 
-  // At 1sec intervals sends PATCH requests to server 
+  // At 1sec, intervals sends PATCH requests to server 
   updateClock = () => {
     const game = this.props.game
     const currentRound = game.rounds[game.rounds.length - 1]

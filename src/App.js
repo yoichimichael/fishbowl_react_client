@@ -15,6 +15,7 @@ class App extends Component {
     turnSection: 1,
     clock: null,
     clockIntervalId: null,
+    clockTimeoutId: null,
     game: undefined,
     teamA: undefined,
     teamB: undefined,
@@ -122,8 +123,11 @@ class App extends Component {
     this.setState({clock: newTime})
   };
 
-  setClockIntervalId = (id) => {
-    this.setState({clockIntervalId: id})
+  setClockTimeoutAndIntervalIds = (intervalId, timeoutId) => {
+    this.setState({
+      clockIntervalId: intervalId,
+      clockTimeoutId: timeoutId
+    })
   };
 
   // below method called by a timeOut in startTurn() method by
@@ -133,6 +137,7 @@ class App extends Component {
     const currentRound = game.rounds[game.rounds.length - 1]
 
     clearInterval(this.state.clockIntervalId);
+    clearTimeout(this.state.clockTimeoutId);
 
     fetch(`http://localhost:3000/rounds/${currentRound.id}/end`, {
       method: "PATCH",
@@ -275,7 +280,7 @@ class App extends Component {
       // splitPlayersIntoTeams,
       addIntervalId,
       findPlayerById,
-      setClockIntervalId,
+      setClockTimeoutAndIntervalIds,
       endTurn
     } = this
 
@@ -301,7 +306,7 @@ class App extends Component {
               addGame={addGame}
               addPlayer={addPlayer}
               clock={clock}
-              setClockIntervalId={setClockIntervalId}
+              setClockTimeoutAndIntervalIds={setClockTimeoutAndIntervalIds}
               endTurn={endTurn}
               game={game}
               cardFlash={cardFlash}

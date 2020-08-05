@@ -4,6 +4,7 @@ import TurnView from '../components/TurnView.js'
 import TurnEndView from '../components/TurnEndView.js'
 
 class TurnContainer extends Component {
+
   state = {
     deck: [],
     deckIndex: 0,
@@ -136,7 +137,7 @@ class TurnContainer extends Component {
       teamARoster,
       teamBRoster,
       cardFlash,
-      setClockIntervalId,
+      setClockTimeoutAndIntervalIds,
       endTurn,
       player,
       playerId,
@@ -156,7 +157,7 @@ class TurnContainer extends Component {
           playerId={playerId}
           findPlayerById={findPlayerById}
           loadDeck={this.loadDeck}
-          setClockIntervalId={setClockIntervalId}
+          setClockTimeoutAndIntervalIds={setClockTimeoutAndIntervalIds}
           endTurn={endTurn}
         />
       case 2:

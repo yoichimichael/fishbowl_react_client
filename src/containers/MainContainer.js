@@ -29,7 +29,7 @@ class MainContainer extends Component {
       clock,
       game,
       cardFlash,
-      setClockIntervalId,
+      setClockTimeoutAndIntervalIds,
       endTurn,
       player,
       playerId,
@@ -97,7 +97,7 @@ class MainContainer extends Component {
           teamB={teamB}
           teamARoster={teamARoster}
           teamBRoster={teamBRoster}
-          setClockIntervalId={setClockIntervalId}
+          setClockTimeoutAndIntervalIds={setClockTimeoutAndIntervalIds}
           endTurn={endTurn}
           player={player}
           playerId={playerId}
