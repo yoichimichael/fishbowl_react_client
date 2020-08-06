@@ -57,7 +57,7 @@ class TeamAssignForm extends Component {
           onClick={this.handleClick}
         />
         <div className={styles.teamAInputDiv}>
-          <label htmlFor="teamA" classname={styles.teamAName}>
+          <label htmlFor="teamA" className={styles.teamAName}>
             Team A Name:
           </label>
           <br/>
